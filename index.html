@@ -183,7 +183,7 @@ a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid var(
 .surface-why{font-size:12px;color:var(--muted);margin:14px 0 12px;line-height:1.55;border-top:1px solid var(--line);padding-top:12px}
 .surface-why span{display:block;color:var(--gold);font-weight:800;font-size:10px;letter-spacing:.10em;text-transform:uppercase;margin-bottom:4px}
 </style></head>
-<body><header class="topbar"><div class="shell"><div class="topinner"><a href="#" class="brand" id="homeBrand"><img class="crest-logo" src="winter-grind-logo.svg" alt="The Winter Grind Tour logo"/><div><strong>The Winter Grind Tour</strong><small>Kyle Hiscock × Ryan Grace · 2026–27</small></div></a><div class="topright"><span class="series-label">26 WEEKS · 52 COURSES</span></div></div><nav class="nav" aria-label="Series navigation"><button data-tab="home" class="active">Dashboard</button><button data-tab="schedule">The Tour</button><button data-tab="results">Results</button><button data-tab="stats">Player Stats</button><button data-tab="records">Record Book</button><button data-tab="rules">Format & Rules</button></nav></div></header><main class="shell" id="app"></main><div class="shell"><footer class="notice"><div class="foot"><div>The Winter Grind Tour · 2026–27 · Skramble House of Golf ROC</div><div>Unofficial private series. Not affiliated with GSPro or Skramble House of Golf.</div></div></footer></div>
+<body><header class="topbar"><div class="shell"><div class="topinner"><a href="#" class="brand" id="homeBrand"><img class="crest-logo" src="winter-grind-logo.svg" alt="The Winter Grind Tour logo"/><div><strong>The Winter Grind Tour</strong><small>Kyle Hiscock × Ryan Grace · 2026–27</small></div></a><div class="topright"><span class="series-label">26 WEEKS · 52 COURSES</span></div></div><nav class="nav" aria-label="Series navigation"><button data-tab="home" class="active">Dashboard</button><button data-tab="schedule">The Tour</button><button data-tab="results">Results</button><button data-tab="stats">Player Stats</button><button data-tab="records">Record Book</button><button data-tab="rules">Format & Rules</button></nav></div></header><main class="shell" id="app"></main><nav class="mobile-quicknav" aria-label="Quick tour navigation"><a href="#/schedule" data-quick-tab="schedule">Tour</a><a href="#/results" data-quick-tab="results">Results</a><a href="#/stats" data-quick-tab="stats">Stats</a></nav><div class="shell"><footer class="notice"><div class="foot"><div>The Winter Grind Tour · 2026–27 · Skramble House of Golf ROC</div><div>Unofficial private series. Not affiliated with GSPro or Skramble House of Golf.</div></div></footer></div>
 <script>
 // Set APPS_SCRIPT_URL to the deployed read-only Google Apps Script /exec URL after activation.
 const APPS_SCRIPT_URL="https://script.google.com/macros/s/AKfycbyF_AYU4K1ZKK-cHnRNFnF7kIbnoGbDlyV2HLsttNbMNfIMfd--YC9gul1sfWSCU7HK/exec";
@@ -260,10 +260,14 @@ function weeklyRecap(week){
  return `<div class="recap-summary"><div class="tiny-heading">THE WEEK IN REVIEW</div><p>${esc(parts.join(" "))}</p>${records.length?`<div class="recap-records">${records.map(x=>`<span>★ ${esc(x)}</span>`).join("")}</div>`:""}</div>`;
 }
 function yardageFromTee(s){const x=String(s||"").match(/([0-9]{1,2}),([0-9]{3})\s*yd/);return x?Number(x[1]+x[2]):null}
-function teeAdvice(tee,kind){
- const yd=yardageFromTee(tee),limit=kind==="stroke"?6650:6750;
- if(yd==null)return {type:"verify",message:"Tee length unverified — confirm a suitable option in GSPro."};
- if(yd>limit)return {type:"long",message:`Long layout (${yd.toLocaleString("en-US")} yd) — consider the next shorter verified tee.`};
+function teeAdvice(tee,kind,firmness){
+ const yd=yardageFromTee(tee);
+ if(yd==null)return {type:"verify",message:"Tee not verified — select a suitable tee in GSPro, ideally around 6,200–6,600 yards."};
+ if(yd>6800)return {type:"long",message:`At ${yd.toLocaleString("en-US")} yd, this exceeds our preferred championship range. Check forced carries and choose a shorter verified tee if needed.`};
+ if(yd>6600){
+   const playsFirm=String(firmness)==="Firm"||String(firmness)==="Links";
+   return {type:"consider",message:playsFirm?`Championship-length (${yd.toLocaleString("en-US")} yd). Appropriate with open landing areas and firm rollout; verify any long forced carries.`:`Championship-length (${yd.toLocaleString("en-US")} yd). With normal/soft fairways, consider a shorter verified tee if approaches feel repetitive.`};
+ }
  return null;
 }
 function setupText(s,kind){
@@ -284,12 +288,12 @@ function setupText(s,kind){
  `Realism: ${s.realism||"Force Realistic"}`,
  `Gimmes: ${field(scramble?"gimmeScramble":"gimmeStroke")}`,
  "Mulligans: Off",
- teeAdvice(field(scramble?"teeScramble":"teeStroke"),kind)?.message||""
+ teeAdvice(field(scramble?"teeScramble":"teeStroke"),kind,field(scramble?"scrambleFairway":"strokeFairway"))?.message||""
  ].filter(Boolean).join("\n");
 }
 function setupPanel(s,kind){
  const scramble=kind==="scramble",num=scramble?1:2;
- const val=k=>esc(s[k]||"—"),tee=s[scramble?"teeScramble":"teeStroke"],alert=teeAdvice(tee,kind);
+ const val=k=>esc(s[k]||"—"),tee=s[scramble?"teeScramble":"teeStroke"],alert=teeAdvice(tee,kind,s[scramble?"scrambleFairway":"strokeFairway"]);
  const items=[["GSPro",s[scramble?"scrambleGs":"strokeGs"]],["Tees",tee],["Fairways",s[scramble?"scrambleFairway":"strokeFairway"]],["Greens",s[scramble?"scrambleGreen":"strokeGreen"]],["Wind",s[scramble?"windScramble":"windStroke"]],["Pins",s[scramble?"pinsScramble":"pinsStroke"]],["Stimp",s.stimp||11],["Gimmes",s[scramble?"gimmeScramble":"gimmeStroke"]],["Realism",s.realism||"Force Realistic"],["Mulligans","Off"]];
  return `<div class="setup-card"><div class="setup-top"><div><div class="tiny-heading">ROUND ${num} · ${scramble?"TWO-MAN SCRAMBLE":"STROKE PLAY"}</div><h3>${val(scramble?"scramble":"stroke")}</h3></div><button class="setup-copy" type="button" data-copy-setup="${s.week}:${kind}" aria-label="Copy round ${num} setup">Copy settings</button></div><div class="setup-grid">${items.map(([label,value])=>`<div><span>${esc(label)}</span><strong>${esc(value||"—")}</strong></div>`).join("")}</div>${alert?`<div class="tee-notice ${alert.type}">${esc(alert.message)}</div>`:""}</div>`;
 }
@@ -317,7 +321,7 @@ function tour(){
 }
 function resultsPage(){
   const posted=results.filter(r=>numeric(r.kyleGross)||numeric(r.ryanGross)||numeric(r.scrambleGross)).sort((a,b)=>Number(b.week)-Number(a.week));
-  return `<section class="section">${h("Scorecards & results","Scramble first, individual stroke play second. Open any week to see both full 18-hole scorecards.")}${posted.length?`<div class="result-cards">${posted.map(r=>`<article class="card result-card"><div class="detail-utility"><div class="eyebrow">WEEK ${esc(r.week)} · ${esc(prettyDate(r.date||schedule.find(s=>Number(s.week)===Number(r.week))?.date))}</div><span class="tag">${esc(weekStatus(schedule.find(s=>Number(s.week)===Number(r.week))||{week:r.week}))}</span></div><div class="result-rounds"><div><div class="tiny-heading">ROUND 1 · TEAM SCRAMBLE</div><h3>${esc(r.scramble||"Scramble")}</h3><strong>${fmt(r.scrambleGross)} <small>${sign(r.scrambleToPar)}</small></strong></div><div><div class="tiny-heading">ROUND 2 · STROKE PLAY</div><h3>${esc(r.stroke||"Stroke play")}</h3><span>Kyle <strong>${fmt(r.kyleGross)}</strong> · Ryan <strong>${fmt(r.ryanGross)}</strong></span></div></div><a class="linkbutton link-inline" href="#/week/${Number(r.week)}">View Week ${esc(r.week)} scorecards →</a></article>`).join("")}</div>`:`<div class="empty"><h3>${feedState==="unavailable"?"Results temporarily unavailable":feedState==="loading"?"Loading tour results…":"The first scorecards are coming soon"}</h3><p>${feedState==="unavailable"?"The schedule is still available. Please try reloading this page shortly.":feedState==="loading"?"Checking for verified results.":"Week-by-week team and individual results will appear here after each Tuesday’s scores are recorded."}</p></div>`}</section>`;
+  return `<section class="section">${h("Scorecards & results","Scramble first, individual stroke play second. Open any week to see both full 18-hole scorecards.")}${posted.length?`<div class="result-cards">${posted.map(r=>`<article class="card result-card"><div class="detail-utility"><div class="eyebrow">WEEK ${esc(r.week)} · ${esc(prettyDate(r.date||schedule.find(s=>Number(s.week)===Number(r.week))?.date))}</div><span class="tag">${esc(weekStatus(schedule.find(s=>Number(s.week)===Number(r.week))||{week:r.week}))}</span></div><div class="result-rounds"><div><div class="tiny-heading">ROUND 1 · TEAM SCRAMBLE</div><h3>${esc(r.scramble||"Scramble")}</h3><strong>${fmt(r.scrambleGross)} <small>${sign(r.scrambleToPar)}</small></strong></div><div><div class="tiny-heading">ROUND 2 · STROKE PLAY</div><h3>${esc(r.stroke||"Stroke play")}</h3><span>Kyle <strong>${fmt(r.kyleGross)}</strong> · Ryan <strong>${fmt(r.ryanGross)}</strong></span></div></div>${weeklyRecap(r.week)}<a class="linkbutton link-inline" href="#/week/${Number(r.week)}">View Week ${esc(r.week)} scorecards →</a></article>`).join("")}</div>`:`<div class="empty"><h3>${feedState==="unavailable"?"Results temporarily unavailable":feedState==="loading"?"Loading tour results…":"The first scorecards are coming soon"}</h3><p>${feedState==="unavailable"?"The schedule is still available. Please try reloading this page shortly.":feedState==="loading"?"Checking for verified results.":"Week-by-week team and individual results will appear here after each Tuesday’s scores are recorded."}</p></div>`}</section>`;
 }
 function tourNYDate(){
   const parts=Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date());
@@ -375,7 +379,7 @@ function weekPage(){
   const course=(round,name,gs,tee,fw,gr,wind,pins,gimme,source,why)=>`<div class="round-course"><div class="tiny-heading">ROUND ${round} · 18 HOLES</div><h3>${esc(name)}</h3><div class="course-tees">${esc(tee||"Tee TBD")}</div><div class="muted-note">GSPro: ${esc(gs||name)}</div><div class="course-detail-grid"><span>Gimme <strong>${esc(gimme||"—")}</strong></span><span>Wind <strong>${esc(wind||"—")}</strong></span><span>Fairways <strong>${esc(fw||"—")}</strong></span><span>Greens <strong>${esc(gr||"—")}</strong></span><span>Pins <strong>${esc(pins||"—")}</strong></span><span>Stimp <strong>${esc(s.stimp||11)}</strong></span></div>${why?`<p class="surface-why"><span>Why this setup</span>${esc(why)}</p>`:""}${safeLink(source,"GSPro course listing")}</div>`;
   const prev=Number(s.week)>1?`<a class="quiet-link" href="#/week/${Number(s.week)-1}">← Week ${Number(s.week)-1}</a>`:"<span></span>";
   const next=Number(s.week)<schedule.length?`<a class="quiet-link" href="#/week/${Number(s.week)+1}">Week ${Number(s.week)+1} →</a>`:"<span></span>";
-  return `<section class="section detail-page"><div class="detail-utility"><a href="#/schedule" class="quiet-link">← Full tour</a><span class="tag">${esc(status)}</span></div><div class="eyebrow">WEEK ${esc(s.week)} · ${esc(prettyDate(s.date))}</div><h1 class="detail-heading">${esc(s.theme)}</h1><p class="lede">Two courses. Thirty-six holes. One night. <strong>${esc(s.realism||"Force Realistic")} · Stimp ${esc(s.stimp||11)}</strong></p><div class="detail-actions"><a class="linkbutton" href="#/results">All results</a><button type="button" class="linkbutton" data-share-week="${esc(s.week)}">Share this week <span aria-hidden="true">↗</span></button></div><div class="round-two-grid">${course(1,s.scramble,s.scrambleGs,s.teeScramble,s.scrambleFairway,s.scrambleGreen,s.windScramble,s.pinsScramble,s.gimmeScramble,s.sourceScramble,s.conditionNoteScramble)}${course(2,s.stroke,s.strokeGs,s.teeStroke,s.strokeFairway,s.strokeGreen,s.windStroke,s.pinsStroke,s.gimmeStroke,s.sourceStroke,s.conditionNoteStroke)}</div><div class="sectiontop"><div><h2>Round 1 · Two-man scramble</h2><p>${esc(s.scramble)} · 2-foot gimmes</p></div><div class="result-chip">Team ${fmt(r.scrambleGross)} <span>${sign(r.scrambleToPar)}</span></div></div>${roundScoreboard("scramble",s.week)}<div class="sectiontop scores-gap"><div><h2>Round 2 · Individual stroke play</h2><p>${esc(s.stroke)} · 5-foot gimmes</p></div></div><div class="player-summary"><div class="score-summary"><span>KYLE HISCOCK</span><strong>${fmt(r.kyleGross)}</strong><small>${sign(r.kyleToPar)}</small></div><div class="score-summary"><span>RYAN GRACE</span><strong>${fmt(r.ryanGross)}</strong><small>${sign(r.ryanToPar)}</small></div><div class="score-summary"><span>WINTER CUP WINNER</span><strong class="winner-name">${esc(r.winner||"—")}</strong></div></div>${roundScoreboard("stroke",s.week)}<div class="card weekly-stats"><h3>Stroke-play round stats</h3>${weeklyPerformance(r)}</div><div class="detail-utility bottom-switch">${prev}${next}</div></section>`;
+  return `<section class="section detail-page"><div class="detail-utility"><a href="#/schedule" class="quiet-link">← Full tour</a><span class="tag">${esc(status)}</span></div><div class="eyebrow">WEEK ${esc(s.week)} · ${esc(prettyDate(s.date))}</div><h1 class="detail-heading">${esc(s.theme)}</h1><p class="lede">Two courses. Thirty-six holes. One night. <strong>${esc(s.realism||"Force Realistic")} · Stimp ${esc(s.stimp||11)}</strong></p><div class="detail-actions"><a class="linkbutton" href="#/results">All results</a><button type="button" class="linkbutton" data-share-week="${esc(s.week)}">Share this week <span aria-hidden="true">↗</span></button></div><div class="setup-section"><div class="sectiontop"><div><h2>Pre-round setup</h2><p>Use these settings at the simulator. The detailed course rationale is directly below.</p></div></div><div class="round-two-grid">${setupPanel(s,"scramble")}${setupPanel(s,"stroke")}</div></div><div class="sectiontop"><div><h2>Course details &amp; rationale</h2><p>Background on each course, with the official selected tour conditions.</p></div></div><div class="round-two-grid">${course(1,s.scramble,s.scrambleGs,s.teeScramble,s.scrambleFairway,s.scrambleGreen,s.windScramble,s.pinsScramble,s.gimmeScramble,s.sourceScramble,s.conditionNoteScramble)}${course(2,s.stroke,s.strokeGs,s.teeStroke,s.strokeFairway,s.strokeGreen,s.windStroke,s.pinsStroke,s.gimmeStroke,s.sourceStroke,s.conditionNoteStroke)}</div><div class="sectiontop"><div><h2>Round 1 · Two-man scramble</h2><p>${esc(s.scramble)} · 2-foot gimmes</p></div><div class="result-chip">Team ${fmt(r.scrambleGross)} <span>${sign(r.scrambleToPar)}</span></div></div>${roundScoreboard("scramble",s.week)}<div class="sectiontop scores-gap"><div><h2>Round 2 · Individual stroke play</h2><p>${esc(s.stroke)} · 5-foot gimmes</p></div></div><div class="player-summary"><div class="score-summary"><span>KYLE HISCOCK</span><strong>${fmt(r.kyleGross)}</strong><small>${sign(r.kyleToPar)}</small></div><div class="score-summary"><span>RYAN GRACE</span><strong>${fmt(r.ryanGross)}</strong><small>${sign(r.ryanToPar)}</small></div><div class="score-summary"><span>WINTER CUP WINNER</span><strong class="winner-name">${esc(r.winner||"—")}</strong></div></div>${roundScoreboard("stroke",s.week)}${weeklyRecap(s.week)}<div class="card weekly-stats"><h3>Stroke-play round stats</h3>${weeklyPerformance(r)}</div><div class="detail-utility bottom-switch">${prev}${next}</div></section>`;
 }
 
 function getMetric(){
@@ -450,16 +454,20 @@ function routeFromHash(){
   page=match?match[1]:"home";
   if(match&&match[2]){const w=Number(match[2]);if(w>=1&&w<=schedule.length)selectedWeek=w;}
   render();
+  if(typeof window.scrollTo==="function"){if(window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches)window.scrollTo(0,0);else window.scrollTo({top:0,behavior:"instant"});}
 }
 
 function render(){
-  document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.tab===page));
+  document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.tab===page||(page==="week"&&b.dataset.tab==="schedule")));
+  document.querySelectorAll("[data-quick-tab]").forEach(b=>{const active=b.dataset.quickTab===page||(page==="week"&&b.dataset.quickTab==="schedule");b.classList.toggle("active",active);if(active)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current");});
   const pages={home,schedule:tour,results:resultsPage,stats:statPage,records:recordsPage,rules,week:weekPage};
   document.getElementById("app").innerHTML=pages[page]();
   const wk=document.getElementById("weekFilter");
   if(wk)wk.addEventListener("change",e=>{selectedWeek=Number(e.target.value);location.hash="#/stats/"+selectedWeek;render();});
   const metric=document.getElementById("trendMetric");
   if(metric)metric.addEventListener("change",e=>{trendMetric=e.target.value;render();});
+  const jump=document.getElementById("scheduleJump");
+  if(jump)jump.addEventListener("change",e=>{if(e.target.value)location.hash="#/week/"+Number(e.target.value);});
 }
 
 function shareWeek(week){
@@ -470,12 +478,22 @@ function shareWeek(week){
 }
 
 function handleClick(e){
+  const copy=e.target.closest("[data-copy-setup]");
+  if(copy){const [wk,kind]=String(copy.dataset.copySetup).split(":"),s=schedule.find(x=>Number(x.week)===Number(wk));if(s)copySetup(setupText(s,kind),copy);return;}
+  const filter=e.target.closest("[data-schedule-filter]");
+  if(filter){scheduleFilter=filter.dataset.scheduleFilter;render();return;}
   const share=e.target.closest("[data-share-week]");
   if(share){shareWeek(Number(share.dataset.shareWeek));return;}
   const w=e.target.closest("[data-show-week]");
   if(w){location.hash="#/week/"+Number(w.dataset.showWeek);return;}
   const b=e.target.closest("[data-tab]");
   if(b){location.hash="#/"+b.dataset.tab;}
+}
+function copySetup(str,button){
+  const success=()=>{button.textContent="Copied ✓";button.setAttribute("aria-label","Settings copied to clipboard");};
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(str).then(success).catch(()=>{if(typeof window.prompt==="function")window.prompt("Copy the round settings:",str);});
+  }else if(typeof window.prompt==="function")window.prompt("Copy the round settings:",str);
 }
 document.addEventListener("click",handleClick);
 window.addEventListener("hashchange",routeFromHash);
