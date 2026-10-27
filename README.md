@@ -1,9 +1,9 @@
-# The Winter Grind Tour — Kyle × Gracey
+# The Winter Grind Tour — Kyle Hiscock × Ryan Grace
 
 Evergreen website for **Kyle Hiscock** and **Ryan Grace** at Skramble House of Golf ROC.
 
 ## Current site
-- 16 themed Tuesdays, 32 different GSPro course assignments, October 27, 2026–February 9, 2027.
+- 25 themed Tuesdays, 50 different GSPro course assignments, October 27, 2026–April 13, 2027.
 - **Round 1:** 18-hole two-man scramble, **2-ft gimmes**.
 - **Round 2:** 18-hole individual gross stroke play, **5-ft gimmes**.
 - Stimp 11, Force Realistic, 6,000–7,000-yard tees. Pins, wind and firmness vary by course.
@@ -18,7 +18,7 @@ Evergreen website for **Kyle Hiscock** and **Ryan Grace** at Skramble House of G
 2. Under **Build and deployment**, set Source = **Deploy from a branch**.
 3. Choose **main** branch and **/(root)** folder, then Save.
 4. The normal address is https://kylehiscock.github.io/winter-grind-tour/ once Pages is active. Do not assume it is live until GitHub Pages reports a deployment and the site opens.
-5. This repo does **not** affect any HGGL repository.
+5. This repo does **not** affect any HGGL repository. Week 16 is the Ross Championship Showcase; the Spring Cup Grand Finale is Week 25.
 
 ## Live Google Sheets scoring — administrator setup
 
@@ -58,3 +58,9 @@ ChatGPT can read the screenshots and, with the connected Google Sheet, enter ver
 ## Notes
 
 GSPro course names, installations and tees require confirmation at Skramble. This is an unofficial recreational series, not GHIN/World Handicap System scoring. Hosted on GitHub Pages; independent of GSPro, Skramble, and HGGL.
+
+## Extended season research (Weeks 17–25)
+
+Added nine Tuesday sessions February 16–April 13, 2027, with 18 new GSPro models. Course pairings: Bandon Dunes Encore (Old Macdonald + Bandon Dunes); Open Championship Rewind (Royal St Georges + Royal Birkdale); Northern Ireland Links Quest (DPC Portrush + DPC County Down); Nevada Desert Spectacular (Wolf Creek + Shadow Creek); St. Patrick's Week Challenge (Old Head + Adare Manor); Atlantic Coast Clash (Sea Island Seaside + Kiawah Ocean); American Major Tests (Prairie Knolls + Oakmont CC); Championship Dress Rehearsal (Quail Hollow + Valhalla); Spring Cup Grand Finale (Riviera + Pine Valley).
+
+Every selected tee was checked against a course-specific public [The Course View](https://thecourseview.com/) page for 6,000–7,000 yards. See the private spreadsheet's Schedule and Course Bank tabs for exact tee colors, yardages, public source links, and weekly conditions. All nine weeks are two full 18-hole rounds. Venue-specific installation and course version cannot be confirmed until checking Skramble's GSPro PCs. The existing Apps Script feed is range-independent and reads all added rows automatically.
