@@ -182,6 +182,70 @@ a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid var(
 /* Research-backed course profiles; explanations shown for each round */
 .surface-why{font-size:12px;color:var(--muted);margin:14px 0 12px;line-height:1.55;border-top:1px solid var(--line);padding-top:12px}
 .surface-why span{display:block;color:var(--gold);font-weight:800;font-size:10px;letter-spacing:.10em;text-transform:uppercase;margin-bottom:4px}
+
+/* Final Winter Grind UX improvements: setup, status, competition and mobile shortcuts */
+.dashboard-two{display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);gap:16px;margin:19px 0 18px;align-items:stretch}
+.news-card,.race-panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;min-width:0}
+.news-card h3,.race-panel h3{font:600 23px Georgia,serif;margin:10px 0 9px;line-height:1.25}
+.news-card p,.race-panel p{color:var(--muted);font-size:13px;line-height:1.6;margin-bottom:20px}
+.cup-line{margin:15px 0}
+.cup-line-meta{display:flex;gap:12px;justify-content:space-between;font-size:12px;margin-bottom:6px}
+.cup-line-meta span{color:var(--gold);font-variant-numeric:tabular-nums;font-weight:800}
+.cup-progress{height:8px;background:var(--bg2);border-radius:99px;overflow:hidden}
+.cup-progress>span{display:block;height:100%;border-radius:99px}
+.cup-progress .kylebar{background:var(--gold)}
+.cup-progress .ryanbar{background:var(--mint)}
+.race-facts{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0;color:var(--muted);font-size:11px}
+.race-facts span{background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:9px 11px}
+.race-facts strong{display:block;color:var(--ink);font-size:16px}
+.recap-summary{background:linear-gradient(135deg,#1a392e,var(--panel));border:1px solid #5d7560;border-radius:13px;padding:19px 21px;margin:22px 0}
+.recap-summary p{margin:10px 0;color:var(--ink);line-height:1.6;font-size:14px}
+.recap-records{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
+.recap-records>span{background:#3d533a;color:#f4e6c7;border:1px solid #7e7854;border-radius:8px;padding:5px 9px;font-size:11px;font-weight:700}
+.result-card .recap-summary{margin:14px 0}
+.result-card .recap-summary p{font-size:12px}
+.schedule-tools{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin:18px 0 22px}
+.filter-tabs{display:inline-flex;gap:4px;flex-wrap:wrap;padding:4px;background:var(--panel);border:1px solid var(--line);border-radius:12px}
+.filter-tabs button{background:transparent;color:var(--muted);border:0;padding:9px 14px;cursor:pointer;font-size:12px;font-weight:850;border-radius:9px}
+.filter-tabs button.selected,.filter-tabs button:hover{background:var(--panel2);color:var(--ink)}
+.filter-tabs button.selected{box-shadow:inset 0 -2px var(--gold)}
+.jump-week{display:flex;flex-direction:column;gap:4px;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:800}
+.jump-week select{min-width:min(260px,80vw);max-width:330px;background:var(--panel);color:var(--ink);border:1px solid var(--line);padding:10px 12px;border-radius:9px;cursor:pointer;font-size:12px}
+.setup-section{margin:20px 0 30px}
+.setup-card{background:linear-gradient(150deg,#224536,var(--panel));border:1px solid #54715f;border-radius:16px;padding:20px;min-width:0}
+.setup-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:15px}
+.setup-top h3{font:600 23px Georgia,serif;line-height:1.22;margin:10px 0 0}
+.setup-copy{background:var(--bg);color:var(--gold);border:1px solid var(--line);border-radius:9px;font-size:11px;font-weight:850;padding:9px 12px;cursor:pointer;white-space:nowrap}
+.setup-copy:hover{border-color:var(--gold)}
+.setup-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.setup-grid>div{display:flex;flex-direction:column;min-width:0;border:1px solid #3e6251;border-radius:9px;background:#0f241a88;padding:10px}
+.setup-grid span{color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-size:10px;font-weight:800}
+.setup-grid strong{margin-top:4px;font-size:12px;overflow-wrap:anywhere}
+.tee-notice{border-radius:9px;border:1px solid #7c6b4d;background:#372d20;color:#f6dcab;font-size:12px;padding:11px;margin-top:14px;line-height:1.6}
+.tee-notice.consider{background:#25372b;border-color:#597657;color:#cce2c2}
+.tee-notice.verify{border-color:#8b7148}
+.tee-notice.long{border-color:#a27e52}
+.home-weekly-recap{margin:0 0 18px}
+.mobile-quicknav{display:none}
+@media(max-width:900px){.dashboard-two{grid-template-columns:1fr}}
+@media(max-width:680px){
+ .shell{padding-left:16px;padding-right:16px}
+ .news-card,.race-panel{padding:18px}
+ .setup-card{padding:16px}
+ .setup-grid{gap:7px}
+ .setup-grid>div{padding:9px}
+ .setup-grid strong{font-size:12px}
+ .schedule-tools{align-items:stretch}
+ .jump-week{width:100%}
+ .jump-week select{max-width:none;width:100%;min-width:0}
+ .filter-tabs{width:100%;display:grid;grid-template-columns:repeat(3,1fr)}
+ .filter-tabs button{padding:10px 5px}
+ .mobile-quicknav{display:grid;grid-template-columns:repeat(3,1fr);position:fixed;left:0;right:0;bottom:0;z-index:20;padding:7px 12px calc(7px + env(safe-area-inset-bottom,0px));gap:6px;background:#10231ef3;backdrop-filter:blur(16px);border-top:1px solid var(--line)}
+ .mobile-quicknav a{padding:10px 7px;color:var(--muted);font-size:12px;font-weight:800;text-align:center;text-decoration:none;border-radius:9px;border:1px solid transparent}
+ .mobile-quicknav a.active{background:var(--panel2);color:var(--gold);border-color:var(--line)}
+ body{padding-bottom:calc(65px + env(safe-area-inset-bottom,0px))}
+ .notice{padding-bottom:12px}
+}
 </style></head>
 <body><header class="topbar"><div class="shell"><div class="topinner"><a href="#" class="brand" id="homeBrand"><img class="crest-logo" src="winter-grind-logo.svg" alt="The Winter Grind Tour logo"/><div><strong>The Winter Grind Tour</strong><small>Kyle Hiscock × Ryan Grace · 2026–27</small></div></a><div class="topright"><span class="series-label">26 WEEKS · 52 COURSES</span></div></div><nav class="nav" aria-label="Series navigation"><button data-tab="home" class="active">Dashboard</button><button data-tab="schedule">The Tour</button><button data-tab="results">Results</button><button data-tab="stats">Player Stats</button><button data-tab="records">Record Book</button><button data-tab="rules">Format & Rules</button></nav></div></header><main class="shell" id="app"></main><nav class="mobile-quicknav" aria-label="Quick tour navigation"><a href="#/schedule" data-quick-tab="schedule">Tour</a><a href="#/results" data-quick-tab="results">Results</a><a href="#/stats" data-quick-tab="stats">Stats</a></nav><div class="shell"><footer class="notice"><div class="foot"><div>The Winter Grind Tour · 2026–27 · Skramble House of Golf ROC</div><div>Unofficial private series. Not affiliated with GSPro or Skramble House of Golf.</div></div></footer></div>
 <script>
