@@ -74,3 +74,12 @@ Four approved upgrades preserve the existing 25-week / 50-course structure:
 - Week 22 **Atlantic Coast Clash**: Cabot Cliffs (Black, 6,685 yd) replaces Sea Island Seaside as Round 1, followed by Kiawah Ocean.
 
 All source links and course-specific firmness/wind settings are maintained in the live Schedule and Course Bank sheets. GSPro availability on the venue's local PC still requires checking.
+
+## Course-condition realism review — October 27, 2026
+
+- Audited the entire 25-week / 50-course schedule against real-world course maintenance and playing-characteristics sources and the GSPro course model listings.
+- Updated 30 course condition profiles, preserving all tees, pairings, pin days, Stimp 11, gimme rules and scoring calculations. The Schedule and Course Bank match the website.
+- East Lake now uses **Normal** fairways and **Firm** greens: its restored Zorro zoysia promotes rollout, while the Normal simulator preset is a playable-season compromise rather than championship-extreme. TPC Scottsdale and Wolf Creek favor Normal overseeded desert fairways.
+- Coastal sand/fescue ground-game venues use firmer fairways, while wetter or irrigated parkland venues generally stay Normal. The five specifically exposed Gusty rounds are Carnoustie, Shinnecock Hills, Royal St Georges, Royal Portrush and Old Head.
+- The Course Bank has a **Why This Setup** column documenting the rationale for every course. Corresponding explanations appear on each weekly detail page.
+- These are representative playing-season *presets*, not forecasts or guaranteed measured real-world firmness. The venue's installed GSPro version / physics can affect perceived ball response.
