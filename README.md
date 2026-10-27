@@ -3,7 +3,7 @@
 Evergreen website for **Kyle Hiscock** and **Ryan Grace** at Skramble House of Golf ROC.
 
 ## Current site
-- 25 themed Tuesdays, 50 different GSPro course assignments, October 27, 2026–April 13, 2027.
+- 26 themed Tuesdays, 52 distinct GSPro course assignments, October 27, 2026–April 20, 2027.
 - **Round 1:** 18-hole two-man scramble, **2-ft gimmes**.
 - **Round 2:** 18-hole individual gross stroke play, **5-ft gimmes**.
 - Stimp 11, Force Realistic, 6,000–7,000-yard tees. Pins, wind and firmness vary by course.
@@ -18,7 +18,7 @@ Evergreen website for **Kyle Hiscock** and **Ryan Grace** at Skramble House of G
 2. Under **Build and deployment**, set Source = **Deploy from a branch**.
 3. Choose **main** branch and **/(root)** folder, then Save.
 4. The normal address is https://kylehiscock.github.io/winter-grind-tour/ once Pages is active. Do not assume it is live until GitHub Pages reports a deployment and the site opens.
-5. This repo does **not** affect any HGGL repository. Week 16 is the Ross Championship Showcase; the Spring Cup Grand Finale is Week 25.
+5. This repo does **not** affect any HGGL repository. Week 16 is the Ross Championship Showcase; the Spring Cup Grand Finale is Week 26.
 
 ## Live Google Sheets scoring — administrator setup
 
@@ -59,15 +59,15 @@ ChatGPT can read the screenshots and, with the connected Google Sheet, enter ver
 
 GSPro course names, installations and tees require confirmation at Skramble. This is an unofficial recreational series, not GHIN/World Handicap System scoring. Hosted on GitHub Pages; independent of GSPro, Skramble, and HGGL.
 
-## Extended season research (Weeks 17–25)
+## Extended season research (Weeks 17–26)
 
-Added nine Tuesday sessions February 16–April 13, 2027, with 18 new GSPro models. Course pairings: Ozark Mountain Escape (Paynes Valley + Ozarks National Golf Course); Open Championship Rewind (Royal St Georges + Royal Birkdale); Northern Ireland Links Quest (DPC Portrush + DPC County Down); Nevada Desert Spectacular (Wolf Creek + Shadow Creek); St. Patrick's Week Challenge (Old Head + Adare Manor); Atlantic Coast Clash (Cabot Cliffs + Kiawah Ocean); American Major Tests (Prairie Knolls + Oakmont CC); Championship Dress Rehearsal (Quail Hollow + Valhalla); Spring Cup Grand Finale (Riviera + Pine Valley).
+Added ten Tuesday sessions February 16–April 20, 2027, with 20 new GSPro models compared with the original 16-week schedule. Course pairings: Ozark Mountain Escape (Paynes Valley + Ozarks National Golf Course); Open Championship Rewind (Royal St Georges + Royal Birkdale); Northern Ireland Links Quest (DPC Portrush + DPC County Down); Nevada Desert Spectacular (Wolf Creek + Shadow Creek); St. Patrick's Week Challenge (Old Head + Adare Manor); Atlantic Coast Clash (Cabot Cliffs + Kiawah Ocean); American Major Tests (Prairie Knolls + Oakmont CC); Championship Dress Rehearsal (Quail Hollow + Valhalla); Wisconsin Sandhills Showdown (Mammoth Dunes + Sand Valley); Spring Cup Grand Finale (Riviera + Pine Valley).
 
-Every selected tee was checked against a course-specific public [The Course View](https://thecourseview.com/) page for 6,000–7,000 yards. See the private spreadsheet's Schedule and Course Bank tabs for exact tee colors, yardages, public source links, and weekly conditions. All nine weeks are two full 18-hole rounds. Venue-specific installation and course version cannot be confirmed until checking Skramble's GSPro PCs. The existing Apps Script feed is range-independent and reads all added rows automatically.
+The 6,000–7,000-yard GSPro tee choices were checked using course-specific public [The Course View](https://thecourseview.com/) pages, except Sovereignbyre Links, for which the **GSPro tee color and exact yardage remain unverified**. See the private spreadsheet's Schedule and Course Bank tabs for exact tee colors, yardages, public source links, and weekly conditions. All ten added weeks are two full 18-hole rounds. Venue-specific installation and course version cannot be confirmed until checking Skramble's GSPro PCs. The existing Apps Script feed is range-independent and reads all added rows automatically.
 
 ## Community favorites refresh — October 27, 2026
 
-Four approved upgrades preserve the existing 25-week / 50-course structure:
+Four approved upgrades originally preserved the 25-week / 50-course structure:
 - Week 2 **Desert After Dark**: Silverleaf Club (Black, 6,916 yd) replaces TPC Summerlin as Round 1 scramble; TPC Scottsdale remains Round 2.
 - Week 7 **The Green Jacket Invitational**: East Lake Golf Club (Blue, 6,482 yd) replaces Druid Hills as Round 1; Augusta-inspired Georgia Golf Club remains Round 2.
 - Week 17 **Ozark Mountain Escape** replaces Bandon Dunes Encore: Payne's Valley (GSPro name **Paynes Valley**, Green, 6,815 yd) scramble, followed by Ozarks National Golf Course (Blue, 6,520 yd) stroke play. Bandon Dunes + Old Macdonald stay in the reserve/alternate pool.
@@ -77,9 +77,17 @@ All source links and course-specific firmness/wind settings are maintained in th
 
 ## Course-condition realism review — October 27, 2026
 
-- Audited the entire 25-week / 50-course schedule against real-world course maintenance and playing-characteristics sources and the GSPro course model listings.
+- Audited the original 25-week / 50-course schedule against real-world maintenance and playing-characteristics sources; the added Wisconsin courses have individual condition rationales.
 - Updated 30 course condition profiles, preserving all tees, pairings, pin days, Stimp 11, gimme rules and scoring calculations. The Schedule and Course Bank match the website.
 - East Lake now uses **Normal** fairways and **Firm** greens: its restored Zorro zoysia promotes rollout, while the Normal simulator preset is a playable-season compromise rather than championship-extreme. TPC Scottsdale and Wolf Creek favor Normal overseeded desert fairways.
 - Coastal sand/fescue ground-game venues use firmer fairways, while wetter or irrigated parkland venues generally stay Normal. The five specifically exposed Gusty rounds are Carnoustie, Shinnecock Hills, Royal St Georges, Royal Portrush and Old Head.
 - The Course Bank has a **Why This Setup** column documenting the rationale for every course. Corresponding explanations appear on each weekly detail page.
 - These are representative playing-season *presets*, not forecasts or guaranteed measured real-world firmness. The venue's installed GSPro version / physics can affect perceived ball response.
+
+## Season 26-week revision — October 27, 2026
+
+- Week 8 **The Home of Golf** (December 15, 2026): Round 1 two-man scramble at **St Andrews Old Course-inspired Sovereignbyre Links**; Round 2 individual stroke play at **Carnoustie** (Blue, 6,567 yd). The Sovereignbyre course is listed in GSPro, but the simulator tee selection/yardage cannot be independently verified. Select a 6,000–7,000-yard tee in GSPro and update the Schedule/Course Bank before this round; do **not** use the real-world St Andrews tee lengths as proof of simulator yardage.
+- Week 14 **Northern Lights & Southern Peaks** (January 26, 2027): Round 1 **Jack's Point**; Round 2 **Norwegian Lights** (Black, 6,428 yd), replacing Greywolf. Norwegian Lights uses its designer-recommended Normal / Normal / Calm setup.
+- Week 25 **Wisconsin Sandhills Showdown** (April 13, 2027): Round 1 **Mammoth Dunes** (Blue, 6,590 yd); Round 2 **Sand Valley** (Blue, 6,540 yd). Both use Firm fairways, Firm greens, Breezy wind, Stimp 11 to emulate strategic sandy ground-game golf.
+- Week 26 **Spring Cup Grand Finale** (April 20, 2027): Original Riviera scramble followed by Pine Valley stroke play, moved from Week 25 so the championship still ends on the final week. All 26 stroke rounds award normal Winter Cup points.
+- Google Sheets score entry, Results formulas, Stroke Holes, Scramble Holes, Stats Overrides, Photo Log, Practice Log, Dashboard and Scramble Trends now extend through Week 26. The score feed automatically reads the new entries; the website embeds all 26 weeks and preserves private sheet access.
