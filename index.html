@@ -32,14 +32,160 @@ body{background:radial-gradient(ellipse at 90% -10%,var(--panel2),transparent 52
 
 .series-label{font-size:11px;letter-spacing:.14em;color:var(--muted);font-weight:800;white-space:nowrap}
 @media(max-width:680px){.topright{display:none}}
+
+/* Winter Grind Tour 2026–27 • mobile-first weekly scorecard experience */
+html{scroll-padding-top:128px}
+#app{min-height:58vh}
+.section{padding-top:32px}
+a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.quiet-link{font-size:12px;font-weight:800;color:var(--gold);text-decoration:none;letter-spacing:.015em}
+.quiet-link:hover{text-decoration:underline}
+.inline-week{display:inline-block;margin-top:18px}
+.tiny-heading{color:var(--gold);font-size:11px;font-weight:800;letter-spacing:.095em;text-transform:uppercase}
+.muted-note{color:var(--muted);font-size:13px;line-height:1.6}
+.linkbutton{text-decoration:none;display:inline-flex;justify-content:center;align-items:center;min-height:40px}
+.linkbutton:hover,.tour-open:hover{border-color:var(--gold)}
+.hero{padding:28px 0 18px}
+.spotlight{display:grid;grid-template-columns:minmax(0,1fr) 265px;gap:14px;margin-top:9px}
+.spotlight-main{background:linear-gradient(140deg,#204537 0%,#142b24 68%,#10241e);border:1px solid var(--line);border-radius:20px;padding:27px;overflow:hidden}
+.spotlight-top,.detail-utility,.spotlight-foot{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.event-kicker{font-size:11px;letter-spacing:.12em;font-weight:900;color:var(--gold)}
+.brand-hero{display:flex;justify-content:space-between;gap:16px;align-items:center}
+.brand-hero h1{font:600 clamp(35px,4vw,55px)/1.07 Georgia,serif;letter-spacing:-.045em;margin:12px 0}
+.brand-hero h1 span{color:var(--gold)}
+.brand-hero p{color:var(--muted);margin:0}
+.hero-crest{width:112px;height:112px;object-fit:contain;flex:0 0 112px;filter:drop-shadow(0 10px 13px #0006)}
+.spotlight-theme{font:600 24px Georgia,serif;margin:20px 0 10px}
+.spotlight-courses,.round-two-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.spotlight-courses>div{background:#0f251e9a;border:1px solid #496b5b;padding:15px;border-radius:12px;min-width:0}
+.spotlight-courses h3{font-size:21px;line-height:1.15;margin:9px 0 7px;overflow-wrap:anywhere}
+.spotlight-courses p{font-size:12px;color:var(--muted);margin:0}
+.spotlight-foot{margin-top:18px;color:var(--muted);font-size:12px}
+.spotlight-side{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:24px}
+.season-big{font:bold 62px Georgia,serif;color:var(--gold);line-height:1;margin:18px 0}
+.season-big span{font:800 12px system-ui;display:block;letter-spacing:.2em;margin-top:6px}
+.spotlight-side p{font-size:13px;color:var(--muted)}
+.spotlight-side-divider{height:1px;background:var(--line);margin:24px 0}
+.record-mini{display:flex;justify-content:space-between;align-items:center;color:var(--muted);margin:25px 0 10px}
+.record-mini strong{font-size:30px;color:var(--ink)}
+.course-round2{margin-top:16px}
+.tour-open{display:inline-block;margin-top:15px;padding-top:11px;border-top:1px solid var(--line);color:var(--gold);font-size:12px;text-decoration:none;font-weight:800}
+.detail-page{padding-top:22px}
+.detail-heading{font:600 clamp(32px,4vw,52px)/1.1 Georgia,serif;margin:13px 0}
+.detail-actions{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.detail-actions button{cursor:pointer}
+.detail-utility{margin-bottom:15px}
+.bottom-switch{border-top:1px solid var(--line);padding-top:25px;margin-top:30px}
+.round-two-grid{margin:20px 0 33px}
+.round-course{padding:21px;background:var(--panel);border:1px solid var(--line);border-radius:16px}
+.round-course h3{font:600 25px Georgia,serif;margin:10px 0 9px}
+.course-tees{font-weight:800;color:var(--gold);margin-bottom:8px}
+.course-detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:17px 0 12px}
+.course-detail-grid span{display:flex;flex-direction:column;gap:1px;font-size:11px;color:var(--muted)}
+.course-detail-grid strong{font-size:13px;color:var(--ink)}
+.round-course>a{color:var(--gold);font-size:12px;font-weight:800;text-decoration:none}
+.result-chip{display:flex;gap:10px;align-items:center;font-size:27px;font-weight:850;font-variant-numeric:tabular-nums;color:var(--ink)}
+.result-chip span{font-size:15px;color:var(--gold)}
+.scores-gap{margin-top:32px}
+.player-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:15px 0}
+.score-summary{padding:14px 18px;background:var(--panel);border:1px solid var(--line);border-radius:12px;display:flex;flex-direction:column;gap:4px}
+.score-summary>span{color:var(--muted);font-size:11px;letter-spacing:.06em;font-weight:800}
+.score-summary strong{font-size:30px;line-height:1.35;font-variant-numeric:tabular-nums}
+.score-summary small{color:var(--gold);font-size:13px}
+.score-summary .winner-name{font-size:18px}
+.nine-block{margin:0 0 15px}
+.nine-heading{display:flex;justify-content:space-between;color:var(--ink);font-size:14px;margin:12px 0 9px}
+.nine-heading>span{color:var(--muted);font-size:12px}
+.hole-grid{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:7px}
+.hole-tile{min-width:0;border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:9px 7px}
+.hole-caption{display:flex;flex-direction:column;align-items:center;font-size:10px;font-weight:850;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:5px;margin-bottom:7px;white-space:nowrap}
+.hole-caption span{font-size:10px;color:var(--gold)}
+.tile-row{display:flex;justify-content:space-between;gap:3px;align-items:center;font-size:10px;color:var(--muted);min-height:30px}
+.score-mark{display:inline-flex;min-width:28px;min-height:28px;padding:2px 4px;border-radius:8px;align-items:center;justify-content:center;font-variant-numeric:tabular-nums;font-size:14px;font-weight:900;color:var(--ink)}
+.score-mark.eagle{background:#dfb24e;color:#1d241e;border-radius:50%}
+.score-mark.birdie{background:#376d5d;border:1px solid #b8e9c4;color:white;border-radius:50%}
+.score-mark.par{border:1px solid #658473;background:transparent}
+.score-mark.bogey{background:#6f4650;border:1px solid #ce9ba0}
+.score-mark.double{background:#4c2632;border:2px double #d497a4}
+.score-mark.unknown{background:#1a342a;color:#b8cbc1}
+.split-totals{background:var(--panel);border:1px solid var(--line);border-radius:12px;margin:14px 0;padding:10px 16px}
+.split-head,.split-line{display:grid;grid-template-columns:minmax(90px,1fr) repeat(3,70px);gap:8px;align-items:center;padding:6px 0;font-size:13px}
+.split-head{color:var(--muted);font-size:11px;letter-spacing:.07em;text-transform:uppercase;border-bottom:1px solid var(--line)}
+.split-head>:not(:first-child),.split-line>:not(:first-child){text-align:right}
+.score-legend{display:flex;gap:15px;flex-wrap:wrap;color:var(--muted);font-size:11px;margin-bottom:18px}
+.score-legend span{display:flex;align-items:center;gap:5px}
+.score-legend i{width:12px;height:12px;border-radius:50%;display:block;border:1px solid #67816f}
+.score-legend .score-eagle{background:#dfb24e}.score-legend .score-birdie{background:#376d5d}.score-legend .score-par{background:transparent}.score-legend .score-bogey{background:#6f4650}.score-legend .score-double{background:#4c2632}
+.weekly-stats{margin-top:26px}
+.round-metric-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:15px}
+.round-metric{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:12px}
+.duo-stats{display:flex;justify-content:space-between;gap:10px;margin-top:12px;color:var(--muted);font-size:12px;flex-wrap:wrap}
+.duo-stats strong{color:var(--ink);font-size:16px;display:block}
+.trend-panel{margin-bottom:18px}
+.select-stack{display:flex;flex-direction:column;gap:5px;color:var(--muted);font-size:11px;text-transform:uppercase;font-weight:800}
+.select-stack .filter{min-width:170px;max-width:220px;text-transform:none}
+.trend-svg{display:block;width:100%;height:auto;min-width:0}
+.chart-wrap{margin-top:18px}
+.chart-legend{display:flex;justify-content:center;gap:22px;color:var(--muted);font-size:12px;margin-top:3px}
+.chart-legend span{display:flex;gap:7px;align-items:center}
+.chart-legend i{display:inline-block;width:11px;height:11px;border-radius:50%}
+.legend-kyle{background:var(--gold)}.legend-ryan{background:var(--mint)}
+.record-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.record-card{padding:23px;background:var(--panel);border:1px solid var(--line);border-radius:16px;display:flex;flex-direction:column}
+.record-label{color:var(--muted);text-transform:uppercase;letter-spacing:.095em;font-size:11px;font-weight:800}
+.record-number{font:700 32px Georgia,serif;color:var(--gold);margin:15px 0 3px}
+.record-card p{flex:1;color:var(--muted);font-size:13px;min-height:37px}
+.pending-note{color:var(--muted);font-size:11px}
+.record-notes{margin-top:17px}
+.result-cards{display:grid;gap:12px}
+.result-card .result-rounds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0}
+.result-rounds>div{border:1px solid var(--line);background:var(--bg2);border-radius:10px;padding:15px}
+.result-rounds h3{margin:7px 0}
+.result-rounds strong{font-size:18px}
+.result-rounds strong small{font-size:12px;color:var(--gold)}
+.link-inline{margin-top:3px}
+.empty.compact{padding:26px 14px}
+.empty.compact p{margin-bottom:0}
+@media(max-width:1020px){
+  .spotlight{grid-template-columns:1fr}
+  .spotlight-side{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center}
+  .spotlight-side-divider{display:none}
+  .spotlight-side .season-big{grid-row:1/4;grid-column:2;margin:0;text-align:right}
+  .record-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hole-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
+}
+@media(max-width:680px){
+  .hero{padding-top:18px}
+  .spotlight-main{padding:18px}
+  .spotlight-side{display:none}
+  .spotlight-top{align-items:flex-start}
+  .brand-hero h1{font-size:38px}
+  .brand-hero p{font-size:13px}
+  .hero-crest{width:78px;height:78px;flex-basis:78px}
+  .spotlight-courses,.round-two-grid,.round-metric-grid,.record-grid,.result-card .result-rounds{grid-template-columns:1fr}
+  .spotlight-courses h3{font-size:19px}
+  .spotlight-foot .linkbutton{width:100%}
+  .round-course{padding:17px}
+  .hole-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+  .hole-tile{padding:8px 10px}
+  .course-head{flex-wrap:wrap}
+  .select-stack{width:100%}
+  .select-stack .filter{max-width:none;width:100%}
+  .player-summary{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .score-summary:last-child{grid-column:1/span 2}
+  .record-card{padding:18px}
+  .detail-utility{gap:10px}
+  .detail-heading{font-size:34px}
+}
+
 </style></head>
-<body><header class="topbar"><div class="shell"><div class="topinner"><a href="#" class="brand" id="homeBrand"><img class="crest-logo" src="winter-grind-logo.svg" alt="The Winter Grind Tour logo"/><div><strong>The Winter Grind Tour</strong><small>Kyle Hiscock × Ryan Grace · 2026–27</small></div></a><div class="topright"><span class="series-label">16 WEEKS · 32 COURSES</span></div></div><nav class="nav" aria-label="Series navigation"><button data-tab="home" class="active">Dashboard</button><button data-tab="schedule">The Tour</button><button data-tab="results">Results</button><button data-tab="stats">Player Stats</button><button data-tab="rules">Format & Rules</button></nav></div></header><main class="shell" id="app"></main><div class="shell"><footer class="notice"><div class="foot"><div>The Winter Grind Tour · 2026–27 · Skramble House of Golf ROC</div><div>Unofficial private series. Not affiliated with GSPro or Skramble House of Golf.</div></div></footer></div>
+<body><header class="topbar"><div class="shell"><div class="topinner"><a href="#" class="brand" id="homeBrand"><img class="crest-logo" src="winter-grind-logo.svg" alt="The Winter Grind Tour logo"/><div><strong>The Winter Grind Tour</strong><small>Kyle Hiscock × Ryan Grace · 2026–27</small></div></a><div class="topright"><span class="series-label">16 WEEKS · 32 COURSES</span></div></div><nav class="nav" aria-label="Series navigation"><button data-tab="home" class="active">Dashboard</button><button data-tab="schedule">The Tour</button><button data-tab="results">Results</button><button data-tab="stats">Player Stats</button><button data-tab="records">Record Book</button><button data-tab="rules">Format & Rules</button></nav></div></header><main class="shell" id="app"></main><div class="shell"><footer class="notice"><div class="foot"><div>The Winter Grind Tour · 2026–27 · Skramble House of Golf ROC</div><div>Unofficial private series. Not affiliated with GSPro or Skramble House of Golf.</div></div></footer></div>
 <script>
 // Set APPS_SCRIPT_URL to the deployed read-only Google Apps Script /exec URL after activation.
 const APPS_SCRIPT_URL="https://script.google.com/macros/s/AKfycbyF_AYU4K1ZKK-cHnRNFnF7kIbnoGbDlyV2HLsttNbMNfIMfd--YC9gul1sfWSCU7HK/exec";
 const base=[{"week":1,"date":"2026-10-27","theme":"Monterey Grand Opening","stroke":"Pebble Beach","strokeGs":"DPC Pebble","scramble":"Spyglass Hill","scrambleGs":"DPC Skyglass Hill","teeStroke":"Blue · 6,798 yd","teeScramble":"Yellow · 6,588 yd","sourceStroke":"https://thecourseview.com/courses/dpc-pebble","sourceScramble":"https://thecourseview.com/courses/dpc-skyglass-hill","strokeFairway":"Normal","strokeGreen":"Normal","scrambleFairway":"Normal","scrambleGreen":"Normal","windStroke":"Breezy","windScramble":"Calm","pinsStroke":"Saturday","pinsScramble":"Sunday","gimmeStroke":"5 ft","gimmeScramble":"2 ft","stimp":11,"realism":"Force Realistic","status":"Planned"},{"week":2,"date":"2026-11-03","theme":"Desert After Dark","stroke":"TPC Scottsdale","strokeGs":"DPC Scottsdale","scramble":"TPC Summerlin","scrambleGs":"DPC Summer","teeStroke":"Blue · 6,626 yd","teeScramble":"Blue · 6,768 yd","sourceStroke":"https://thecourseview.com/courses/dpc-scottsdale","sourceScramble":"https://thecourseview.com/courses/dpc-summer","strokeFairway":"Firm","strokeGreen":"Normal","scrambleFairway":"Normal","scrambleGreen":"Normal","windStroke":"Calm","windScramble":"Calm","pinsStroke":"Saturday","pinsScramble":"Sunday","gimmeStroke":"5 ft","gimmeScramble":"2 ft","stimp":11,"realism":"Force Realistic","status":"Planned"},{"week":3,"date":"2026-11-10","theme":"Pete Dye Double Trouble","stroke":"TPC Sawgrass","strokeGs":"DPC Sodgrass","scramble":"Harbour Town","scrambleGs":"Harbour Town Golf Links at Sea Pines","teeStroke":"Blue · 6,664 yd","teeScramble":"Blue · 6,673 yd","sourceStroke":"https://thecourseview.com/courses/dpc-sodgrass","sourceScramble":"https://thecourseview.com/courses/harbour-town-golf-links-at-sea-pines","strokeFairway":"Firm","strokeGreen":"Firm","scrambleFairway":"Normal","scrambleGreen":"Normal","windStroke":"Calm","windScramble":"Calm","pinsStroke":"Saturday","pinsScramble":"Sunday","gimmeStroke":"5 ft","gimmeScramble":"2 ft","stimp":11,"realism":"Force Realistic","status":"Planned"},{"week":4,"date":"2026-11-17","theme":"California Coast Clash","stroke":"Torrey Pines South","strokeGs":"Torrey South","scramble":"Cypress Point","scrambleGs":"Cypress Point Club","teeStroke":"Green · 6,861 yd","teeScramble":"Black · 6,455 yd","sourceStroke":"https://thecourseview.com/courses/torrey-south","sourceScramble":"https://thecourseview.com/courses/cypress-point-club","strokeFairway":"Firm","strokeGreen":"Normal","scrambleFairway":"Normal","scrambleGreen":"Normal","windStroke":"Calm","windScramble":"Breezy","pinsStroke":"Saturday","pinsScramble":"Sunday","gimmeStroke":"5 ft","gimmeScramble":"2 ft","stimp":11,"realism":"Force Realistic","status":"Planned"},{"week":5,"date":"2026-11-24","theme":"Bandon by the Sea","stroke":"Pacific Dunes","strokeGs":"Pacific Dunes","scramble":"Bandon Trails","scrambleGs":"Bandon Trails","teeStroke":"Black · 6,622 yd","teeScramble":"Black · 6,766 yd","sourceStroke":"https://thecourseview.com/courses/pacific-dunes","sourceScramble":"https://thecourseview.com/courses/bandon-trails","strokeFairway":"Normal","strokeGreen":"Normal","scrambleFairway":"Hard","scrambleGreen":"Normal","windStroke":"Breezy","windScramble":"Breezy","pinsStroke":"Saturday","pinsScramble":"Sunday","gimmeStroke":"5 ft","gimmeScramble":"2 ft","stimp":11,"realism":"Force Realistic","status":"Planned"},{"week":6,"date":"2026-12-01","theme":"Championship Waters","stroke":"Chambers Bay","strokeGs":"Chambers Bay","scramble":"Whistling Straits","scrambleGs":"DPC Lake Michigan","teeStroke":"Yellow · 6,551 yd","teeScramble":"Green · 6,610 yd","sourceStroke":"https://thecourseview.com/courses/chambers-bay","sourceScramble":"https://thecourseview.com/courses/dpc-lake-michigan","strokeFairway":"Links","strokeGreen":"Normal","scrambleFairway":"Firm","scrambleGreen":"Normal","windStroke":"Breezy","windScramble":"Breezy","pinsStroke":"Saturday","pinsScramble":"Sunday","gimmeStroke":"5 ft","gimmeScramble":"2 ft","stimp":11,"realism":"Force Realistic","status":"Planned"},{"week":7,"date":"2026-12-08","theme":"The Green Jacket Invitational","stroke":"Georgia Golf Club (Augusta-inspired)","strokeGs":"Georgia Golf Club","scramble":"Druid Hills","scrambleGs":"Druid Hills","teeStroke":"White · 6,549 yd","teeScramble":"Yellow · 6,664 yd","sourceStroke":"https://thecourseview.com/courses/georgia-golf-club","sourceScramble":"https://thecourseview.com/courses/druid-hills","strokeFairway":"Normal","strokeGreen":"Normal","scrambleFairway":"Normal","scrambleGreen":"Normal","windStroke":"Breezy","windScramble":"Calm","pinsStroke":"Saturday","pinsScramble":"Sunday","gimmeStroke":"5 ft","gimmeScramble":"2 ft","stimp":11,"realism":"Force Realistic","status":"Planned"},{"week":8,"date":"2026-12-15","theme":"Scottish Links Survival","stroke":"Royal Dornoch","strokeGs":"Royal Dornoch","scramble":"Carnoustie","scrambleGs":"Carnoustie","teeStroke":"Blue · 6,741 yd","teeScramble":"Blue · 6,567 yd","sourceStroke":"https://thecourseview.com/courses/royal-dornoch","sourceScramble":"https://thecourseview.com/courses/carnoustie","strokeFairway":"Links","strokeGreen":"Links","scrambleFairway":"Links","scrambleGreen":"Hard","windStroke":"Breezy","windScramble":"Breezy","pinsStroke":"Saturday","pinsScramble":"Sunday","gimmeStroke":"5 ft","gimmeScramble":"2 ft","stimp":11,"realism":"Force Realistic","status":"Planned"},{"week":9,"date":"2026-12-22","theme":"Empire State Showdown","stroke":"Bethpage Black","strokeGs":"Bethpage Black","scramble":"National Golf Links of America","scrambleGs":"National Golf Links of America","teeStroke":"White · 6,728 yd","teeScramble":"Blue · 6,503 yd","sourceStroke":"https://thecourseview.com/courses/bethpage-black","sourceScramble":"https://thecourseview.com/courses/national-golf-links-of-america","strokeFairway":"Normal","strokeGreen":"Normal","scrambleFairway":"Normal","scrambleGreen":"Normal","windStroke":"Calm","windScramble":"Calm","pinsStroke":"Saturday","pinsScramble":"Sunday","gimmeStroke":"5 ft","gimmeScramble":"2 ft","stimp":11,"realism":"Force Realistic","status":"Planned"},{"week":10,"date":"2026-12-29","theme":"Aloha, Winter","stroke":"Kapalua Plantation","strokeGs":"Kapalua – Plantation Course","scramble":"Manele Golf Course","scrambleGs":"Manele Golf Course","teeStroke":"White · 6,713 yd","teeScramble":"Yellow · 6,701 yd","sourceStroke":"https://thecourseview.com/courses/kapalua-plantation-course","sourceScramble":"https://thecourseview.com/courses/manele-golf-course","strokeFairway":"Normal","strokeGreen":"Soft","scrambleFairway":"Normal","scrambleGreen":"Normal","windStroke":"Breezy","windScramble":"Calm","pinsStroke":"Saturday","pinsScramble":"Sunday","gimmeStroke":"5 ft","gimmeScramble":"2 ft","stimp":11,"realism":"Force Realistic","status":"Planned"},{"week":11,"date":"2027-01-05","theme":"Carolina Sandhills","stroke":"Pinehurst No. 2","strokeGs":"Pinehurst 2","scramble":"Tobacco Road","scrambleGs":"Tobacco Road","teeStroke":"White · 6,306 yd","teeScramble":"Black · 6,484 yd","sourceStroke":"https://thecourseview.com/courses/pinehurst-2","sourceScramble":"https://thecourseview.com/courses/tobacco-road","strokeFairway":"Normal","strokeGreen":"Normal","scrambleFairway":"Firm","scrambleGreen":"Firm","windStroke":"Calm","windScramble":"Calm","pinsStroke":"Saturday","pinsScramble":"Sunday","gimmeStroke":"5 ft","gimmeScramble":"2 ft","stimp":11,"realism":"Force Realistic","status":"Planned"},{"week":12,"date":"2027-01-12","theme":"Florida Sandbelt Showdown","stroke":"Streamsong Blue","strokeGs":"Streamsong Blue","scramble":"Streamsong Red","scrambleGs":"Streamsong Red","teeStroke":"Black · 6,735 yd","teeScramble":"Black · 6,524 yd","sourceStroke":"https://thecourseview.com/courses/streamsong-blue","sourceScramble":"https://thecourseview.com/courses/streamsong-red","strokeFairway":"Hard","strokeGreen":"Firm","scrambleFairway":"Firm","scrambleGreen":"Normal","windStroke":"Breezy","windScramble":"Breezy","pinsStroke":"Saturday","pinsScramble":"Sunday","gimmeStroke":"5 ft","gimmeScramble":"2 ft","stimp":11,"realism":"Force Realistic","status":"Planned"},{"week":13,"date":"2027-01-19","theme":"American Classics Challenge","stroke":"Merion Golf Club","strokeGs":"Merion Golf Club","scramble":"Shinnecock Hills","scrambleGs":"Shinnecock Hills Golf Club","teeStroke":"Black · 6,973 yd","teeScramble":"White · 6,758 yd","sourceStroke":"https://thecourseview.com/courses/merion-golf-club","sourceScramble":"https://thecourseview.com/courses/shinnecock-hills-golf-club","strokeFairway":"Normal","strokeGreen":"Normal","scrambleFairway":"Normal","scrambleGreen":"Normal","windStroke":"Calm","windScramble":"Breezy","pinsStroke":"Saturday","pinsScramble":"Sunday","gimmeStroke":"5 ft","gimmeScramble":"2 ft","stimp":11,"realism":"Force Realistic","status":"Planned"},{"week":14,"date":"2027-01-26","theme":"The Alpine Escape","stroke":"Greywolf","strokeGs":"Greywolf Golf Course","scramble":"Jack's Point","scrambleGs":"Jack’s Point","teeStroke":"Black · 6,622 yd","teeScramble":"Blue · 6,674 yd","sourceStroke":"https://thecourseview.com/courses/greywolf-golf-course","sourceScramble":"https://thecourseview.com/courses/jacks-point","strokeFairway":"Normal","strokeGreen":"Normal","scrambleFairway":"Firm","scrambleGreen":"Firm","windStroke":"Calm","windScramble":"Breezy","pinsStroke":"Saturday","pinsScramble":"Sunday","gimmeStroke":"5 ft","gimmeScramble":"2 ft","stimp":11,"realism":"Force Realistic","status":"Planned"},{"week":15,"date":"2027-02-02","theme":"585 Homecoming","stroke":"Monroe Golf Club","strokeGs":"Monroe Golf Club","scramble":"Ravenwood Golf Club","scrambleGs":"Ravenwood Golf Club","teeStroke":"White · 6,585 yd","teeScramble":"Black · 6,664 yd","sourceStroke":"https://thecourseview.com/courses/monroe-golf-club","sourceScramble":"https://thecourseview.com/courses/ravenwood-golf-club","strokeFairway":"Normal","strokeGreen":"Normal","scrambleFairway":"Normal","scrambleGreen":"Normal","windStroke":"Calm","windScramble":"Calm","pinsStroke":"Saturday","pinsScramble":"Sunday","gimmeStroke":"5 ft","gimmeScramble":"2 ft","stimp":11,"realism":"Force Realistic","status":"Planned"},{"week":16,"date":"2027-02-09","theme":"Ross Championship Finale","stroke":"Oak Hill East","strokeGs":"Oak Hill Country Club East","scramble":"Aronimink Golf Club","scrambleGs":"Aronimink Golf Club","teeStroke":"White · 6,845 yd","teeScramble":"Green · 6,862 yd","sourceStroke":"https://thecourseview.com/courses/oak-hill-country-club-east","sourceScramble":"https://thecourseview.com/courses/aronimink-golf-club","strokeFairway":"Normal","strokeGreen":"Normal","scrambleFairway":"Normal","scrambleGreen":"Normal","windStroke":"Calm","windScramble":"Calm","pinsStroke":"Saturday","pinsScramble":"Sunday","gimmeStroke":"5 ft","gimmeScramble":"2 ft","stimp":11,"realism":"Force Realistic","status":"Planned"}];
 let schedule=base.map(s=>({round1:"scramble",round2:"stroke",...s}));
-let results=[],strokeHoles=[],scrambleHoles=[],page='home',selectedWeek=1,feedState=APPS_SCRIPT_URL?'loading':'preview';
+let results=[],strokeHoles=[],scrambleHoles=[],page='home',selectedWeek=1,trendMetric='toPar',feedState=APPS_SCRIPT_URL?'loading':'preview';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const numeric=n=>n!==''&&n!==null&&n!==undefined&&Number.isFinite(Number(n));
 const fmt=n=>numeric(n)?Number(n).toFixed(Number.isInteger(Number(n))?0:1):'—';
@@ -58,29 +204,174 @@ function kpi(label,value,sub){return `<div class="kpi"><div class="lbl">${esc(la
 function h(title,subtitle,extra=''){return `<div class="sectiontop"><div><h2>${esc(title)}</h2><p>${esc(subtitle)}</p></div>${extra}</div>`;}
 const nextWeek=()=>schedule.find(s=>{const r=getResult(s.week);return !numeric(r.kyleGross)||!numeric(r.ryanGross)||!numeric(r.scrambleGross)})||schedule[schedule.length-1];
 function standings(){const d=stats();const players=[{n:'Kyle Hiscock',w:d.k,p:d.kpt,avg:d.kavg},{n:'Ryan Grace',w:d.g,p:d.gpt,avg:d.gavg}].sort((a,b)=>b.p-a.p||b.w-a.w);return `<table class="standings"><thead><tr><th>Player</th><th>Stroke Wins</th><th>Avg ± Par</th><th>Cup Points</th></tr></thead><tbody>${players.map((p,i)=>`<tr><td><strong>${i+1}. ${esc(p.n)}</strong></td><td>${p.w}</td><td>${esc(p.avg)}</td><td class="win"><strong>${p.p}</strong></td></tr>`).join('')}</tbody></table>`;}
-function home(){const d=stats(),n=nextWeek();return `<section class="hero"><div class="herogrid"><div class="headline"><img class="hero-logo" src="winter-grind-logo.svg" alt="Winter Grind Tour crest"><div class="eyebrow">Kyle Hiscock × Ryan Grace · 2026–27</div><h1>The <span>Winter Grind</span> Tour.</h1><p class="lede">Two friends. Two different courses. <strong>18 holes of two-man scramble first, followed by 18 holes of individual stroke play</strong> every Tuesday. A head-to-head Winter Cup and a team scramble record to chase all season.</p><div class="hero-meta"><span class="meta">Oct 27 – Feb 9</span><span class="meta">16 themed Tuesdays</span><span class="meta">32 distinct GSPro courses</span><span class="meta">18-hole scramble → 18-hole stroke play</span><span class="meta">Skramble House of Golf ROC</span></div></div><aside class="next"><div class="week">Week ${esc(n.week)} · ${esc(prettyDate(n.date))}</div><h2>${esc(n.theme)}</h2><div class="divider"></div><div class="week">Round 1 · 18 Holes · 2-Man Scramble · 2-ft gimmes</div><h2>${esc(n.scramble)}</h2><p>${esc(n.teeScramble)} · ${esc(n.windScramble)} wind</p><div class="divider"></div><div class="week">Round 2 · 18 Holes · Individual Stroke Play · 5-ft gimmes</div><h2>${esc(n.stroke)}</h2><p>${esc(n.teeStroke)} · ${esc(n.windStroke)} wind</p><div class="divider"></div><div class="small">Stimp 11 · Force Realistic · No mulligans</div></aside></div></section><section class="section"><div class="kpis">${kpi('Stroke rounds',d.all.length,'of 16 planned')}${kpi('Team scrambles',d.team.length,'of 16 planned')}${kpi('Kyle Cup points',d.kpt,'individual stroke play')}${kpi('Ryan Grace Cup points',d.gpt,'individual stroke play')}</div><div class="cols"><div class="card"><h3>The Winter Cup</h3>${standings()}<p class="intro">Two points per stroke-play win, one apiece for a tie. Team scrambles do not award individual Cup points.</p></div><div class="card"><h3>The team challenge</h3>${kpi('Best team scramble gross',d.teamBest,'18-hole team record')}<p class="intro">Scramble tracking includes hole scoring averages, eagles+, birdies, pars, bogeys and double bogeys or worse.</p></div></div></section>`;}
-function tour(){return `<section class="section" style="padding-top:32px">${h('Sixteen themed Tuesdays','Round 1: 18-hole two-man scramble. Round 2: 18-hole individual stroke play. Two courses, 6,000–7,000 yard tees.')}<div class="schedulegrid">${schedule.map(s=>`<article class="course"><div class="course-side"><div class="lbl">${esc(prettyDate(s.date))}</div><div class="no">${String(s.week).padStart(2,'0')}</div><div class="lbl">${esc(weekStatus(s))}</div></div><div class="course-body"><div class="theme-title">${esc(s.theme||'Tour Week')}</div><div class="theme">Round 1 · 18 Holes · 2-Man Scramble · 2-ft gimmes</div><h3>${esc(s.scramble)}</h3><div class="tee-detail">${esc(s.teeScramble)} · ${esc(s.windScramble)} wind</div><div class="gsname">GSPro: ${esc(s.scrambleGs)} · FWY ${esc(s.scrambleFairway)} · Greens ${esc(s.scrambleGreen)}</div><div class="theme" style="margin-top:14px">Round 2 · 18 Holes · Individual Stroke Play · 5-ft gimmes</div><h3>${esc(s.stroke)}</h3><div class="tee-detail">${esc(s.teeStroke)} · ${esc(s.windStroke)} wind</div><div class="gsname">GSPro: ${esc(s.strokeGs)} · FWY ${esc(s.strokeFairway)} · Greens ${esc(s.strokeGreen)}</div><div class="bottom"><span class="pill">Stimp 11</span><span class="pill">Force Realistic</span><span class="pill">Mulligans off</span></div><div class="course-links">${s.sourceStroke?`<a href="${esc(s.sourceStroke)}" target="_blank" rel="noopener noreferrer">Stroke course details ↗</a>`:''}${s.sourceScramble?`<a href="${esc(s.sourceScramble)}" target="_blank" rel="noopener noreferrer">Scramble details ↗</a>`:''}</div></div></article>`).join('')}</div><p class="intro" style="margin-top:20px">The source links are independent GSPro course-directory listings, not confirmation that Skramble has each model installed. Course conditions are suggested presets. Exact tee selection and availability must be verified at the simulator.</p></section>`;}
+function home(){
+  const d=stats(),s=featuredWeek(),status=weekStatus(s);
+  return `<section class="hero"><div class="eyebrow">KYLE HISCOCK × RYAN GRACE · 2026–27</div><div class="spotlight"><div class="spotlight-main"><div class="spotlight-top"><span class="event-kicker">THIS WEEK · WEEK ${esc(s.week)} · ${esc(prettyDate(s.date))}</span><span class="tag">${esc(status)}</span></div><div class="brand-hero"><div><h1>The <span>Winter Grind</span> Tour.</h1><p>Two friends. Two courses. Thirty-six holes. Every Tuesday.</p></div><img class="hero-crest" src="winter-grind-logo.svg" alt="Winter Grind Tour crest"/></div><h2 class="spotlight-theme">${esc(s.theme)}</h2><div class="spotlight-courses"><div><div class="tiny-heading">ROUND 1 · 18 HOLES · SCRAMBLE</div><h3>${esc(s.scramble)}</h3><p>${esc(s.teeScramble)} · 2-ft gimmes</p></div><div><div class="tiny-heading">ROUND 2 · 18 HOLES · STROKE PLAY</div><h3>${esc(s.stroke)}</h3><p>${esc(s.teeStroke)} · 5-ft gimmes</p></div></div><div class="spotlight-foot"><span>Stimp ${esc(s.stimp||11)} · ${esc(s.realism||"Force Realistic")} · No mulligans</span><a class="linkbutton" href="#/week/${Number(s.week)}">Open this week →</a></div></div><aside class="spotlight-side"><div class="tiny-heading">2026–27 SEASON</div><div class="season-big">16<span>WEEKS</span></div><p>32 courses · two 18-hole rounds every outing</p><div class="spotlight-side-divider"></div><strong>THE WINTER CUP</strong><p>Individual stroke play decides the winner; scramble records belong to the team.</p><a class="quiet-link" href="#/schedule">Explore the full tour →</a></aside></div></section><section class="section"><div class="kpis">${kpi("Stroke rounds",d.all.length,"of 16 planned")}${kpi("Team scrambles",d.team.length,"of 16 planned")}${kpi("Kyle Cup points",d.kpt,"individual stroke play")}${kpi("Ryan Cup points",d.gpt,"individual stroke play")}</div><div class="cols"><div class="card"><div class="course-head"><h3>The Winter Cup</h3><a href="#/stats" class="quiet-link">Player trends →</a></div>${standings()}</div><div class="card"><div class="course-head"><h3>Season records</h3><a href="#/records" class="quiet-link">Record book →</a></div><div class="record-mini"><span>Best team scramble</span><strong>${fmt(d.teamBest)}</strong></div><p class="intro">See the season’s best rounds, individual streaks and shared team milestones.</p></div></div></section>`;
+}
+function tour(){
+  return `<section class="section">${h("Sixteen themed Tuesdays","32 courses. Round 1 is an 18-hole two-man scramble; Round 2 is 18-hole individual stroke play.")}<div class="schedulegrid">${schedule.map(s=>`<article class="course"><div class="course-side"><div class="lbl">${esc(prettyDate(s.date))}</div><div class="no">${String(s.week).padStart(2,"0")}</div><div class="lbl">${esc(weekStatus(s))}</div></div><div class="course-body"><div class="theme-title">${esc(s.theme||"Tour Week")}</div><div class="tiny-heading">ROUND 1 · SCRAMBLE · 18 HOLES</div><h3>${esc(s.scramble)}</h3><div class="tee-detail">${esc(s.teeScramble)} · ${esc(s.windScramble)} wind</div><div class="gsname">GSPro: ${esc(s.scrambleGs)} · FWY ${esc(s.scrambleFairway)} · Greens ${esc(s.scrambleGreen)}</div><div class="tiny-heading course-round2">ROUND 2 · STROKE PLAY · 18 HOLES</div><h3>${esc(s.stroke)}</h3><div class="tee-detail">${esc(s.teeStroke)} · ${esc(s.windStroke)} wind</div><div class="gsname">GSPro: ${esc(s.strokeGs)} · FWY ${esc(s.strokeFairway)} · Greens ${esc(s.strokeGreen)}</div><div class="bottom"><span class="pill">Stimp 11</span><span class="pill">Force Realistic</span><span class="pill">2-ft / 5-ft gimmes</span></div><a class="tour-open" href="#/week/${Number(s.week)}">Open week details & scorecards →</a></div></article>`).join("")}</div><p class="intro" style="margin-top:20px">Course listings are independent GSPro references; availability on Skramble’s simulator must still be verified.</p></section>`;
+}
 function resultsPage(){
-const posted=results.filter(r=>numeric(r.kyleGross)||numeric(r.ryanGross)||numeric(r.scrambleGross));
-return `<section class="section" style="padding-top:32px">${h('Scorecards & results','Round 1 is the two-man scramble; Round 2 is Kyle vs Ryan Grace in stroke play.')}${posted.length?posted.slice().reverse().map(r=>`<div class="card" style="margin-bottom:16px"><div class="eyebrow">Week ${esc(r.week)} · ${esc(prettyDate(r.date||schedule[Number(r.week)-1]?.date))}</div><div class="theme-title">Round 1 · 18-hole two-man scramble</div><h3>${esc(r.scramble||'Scramble')}</h3><p class="intro">Team score: <strong>${fmt(r.scrambleGross)}</strong> · To par: <strong>${sign(r.scrambleToPar)}</strong></p><div class="gimme-pills"><span class="score-stat">Eagles+ ${fmt(r.teamEagles)}</span><span class="score-stat">Birdies ${fmt(r.teamBirdies)}</span><span class="score-stat">Pars ${fmt(r.teamPars)}</span><span class="score-stat">Bogeys ${fmt(r.teamBogeys)}</span><span class="score-stat">Doubles+ ${fmt(r.teamDoubles)}</span></div><div class="divider" style="height:1px;background:var(--line);margin:19px 0"></div><div class="theme-title">Round 2 · 18-hole individual stroke play</div><h3>${esc(r.stroke)}</h3><div class="kpis" style="grid-template-columns:repeat(3,minmax(0,1fr));margin:10px 0">${kpi('Kyle Hiscock',fmt(r.kyleGross),sign(r.kyleToPar))}${kpi('Ryan Grace',fmt(r.ryanGross),sign(r.ryanToPar))}${kpi('Winner',r.winner||'—','Winter Cup')}</div><button class="linkbutton" data-show-week="${Number(r.week)}">View 18-hole breakdown</button></div>`).join(''):`<div class="empty"><h3>${feedState==='unavailable'?'Results temporarily unavailable':feedState==='loading'?'Loading tour results…':'The first results are coming soon'}</h3><p>${feedState==='unavailable'?'Please refresh this page shortly. The tour schedule remains available above.':feedState==='loading'?'Checking for the latest completed scorecards.':'Once the first rounds have been played, verified scores will appear here automatically.'}</p></div>`}</section>`;}
-function holeTable(){
-const wk=Number(selectedWeek),stroke=strokeHoles.filter(h=>Number(h.week)===wk),team=scrambleHoles.filter(h=>Number(h.week)===wk);
-if(!stroke.length&&!team.length)return `<div class="empty">No scorecard data entered yet for Week ${wk}. The scorecards will appear here once verified.</div>`;
-const st=Array.from({length:18},(_,i)=>{const h=i+1, t=team.find(x=>Number(x.hole)===h)||{};return `<tr><td>${h}</td><td>${fmt(t.par)}</td><td>${fmt(t.strokes)}</td><td>${esc(t.outcome||'—')}</td></tr>`;}).join('');
-const sp=Array.from({length:18},(_,i)=>{const h=i+1, t=stroke.find(x=>Number(x.hole)===h)||{};return `<tr><td>${h}</td><td>${fmt(t.par)}</td><td>${fmt(t.kyle)}</td><td>${fmt(t.ryan)}</td></tr>`;}).join('');
-return `<div class="statgrid"><div><div class="theme-title">Round 1 · Scramble</div><div style="overflow:auto"><table class="standings"><thead><tr><th>Hole</th><th>Par</th><th>Team</th><th>Result</th></tr></thead><tbody>${st}</tbody></table></div></div><div><div class="theme-title">Round 2 · Stroke play</div><div style="overflow:auto"><table class="standings"><thead><tr><th>Hole</th><th>Par</th><th>Kyle</th><th>Ryan Grace</th></tr></thead><tbody>${sp}</tbody></table></div></div></div><p class="intro" style="margin-top:16px">Individual FW Hit, GIR, average driving distance and feet of putts made belong to the full round, not a particular hole.</p>`;}
+  const posted=results.filter(r=>numeric(r.kyleGross)||numeric(r.ryanGross)||numeric(r.scrambleGross)).sort((a,b)=>Number(b.week)-Number(a.week));
+  return `<section class="section">${h("Scorecards & results","Scramble first, individual stroke play second. Open any week to see both full 18-hole scorecards.")}${posted.length?`<div class="result-cards">${posted.map(r=>`<article class="card result-card"><div class="detail-utility"><div class="eyebrow">WEEK ${esc(r.week)} · ${esc(prettyDate(r.date||schedule.find(s=>Number(s.week)===Number(r.week))?.date))}</div><span class="tag">${esc(weekStatus(schedule.find(s=>Number(s.week)===Number(r.week))||{week:r.week}))}</span></div><div class="result-rounds"><div><div class="tiny-heading">ROUND 1 · TEAM SCRAMBLE</div><h3>${esc(r.scramble||"Scramble")}</h3><strong>${fmt(r.scrambleGross)} <small>${sign(r.scrambleToPar)}</small></strong></div><div><div class="tiny-heading">ROUND 2 · STROKE PLAY</div><h3>${esc(r.stroke||"Stroke play")}</h3><span>Kyle <strong>${fmt(r.kyleGross)}</strong> · Ryan <strong>${fmt(r.ryanGross)}</strong></span></div></div><a class="linkbutton link-inline" href="#/week/${Number(r.week)}">View Week ${esc(r.week)} scorecards →</a></article>`).join("")}</div>`:`<div class="empty"><h3>${feedState==="unavailable"?"Results temporarily unavailable":feedState==="loading"?"Loading tour results…":"The first scorecards are coming soon"}</h3><p>${feedState==="unavailable"?"The schedule is still available. Please try reloading this page shortly.":feedState==="loading"?"Checking for verified results.":"Week-by-week team and individual results will appear here after each Tuesday’s scores are recorded."}</p></div>`}</section>`;
+}
+function tourNYDate(){
+  const parts=Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date());
+  const val=k=>parts.find(p=>p.type===k)?.value||"";
+  return `${val("year")}-${val("month")}-${val("day")}`;
+}
+
+function featuredWeek(){
+  const now=tourNYDate();
+  return schedule.find(s=>String(s.date)>=now)||schedule[schedule.length-1]||schedule[0];
+}
+
+function scoreKind(score,par){
+  if(!numeric(score)||!numeric(par))return "unknown";
+  const diff=Number(score)-Number(par);
+  return diff<=-2?"eagle":diff===-1?"birdie":diff===0?"par":diff===1?"bogey":"double";
+}
+
+function scoreBadge(score,par){
+  return `<span class="score-mark ${scoreKind(score,par)}">${numeric(score)?esc(fmt(score)):"—"}</span>`;
+}
+
+function nineTotal(records,key,from,to){
+  const slice=Array.from({length:to-from+1},(_,i)=>records.find(x=>Number(x.hole)===from+i)||{});
+  return slice.every(x=>numeric(x[key]))?slice.reduce((n,x)=>n+Number(x[key]),0):"—";
+}
+
+function roundScoreboard(kind,week){
+  const team=kind==="scramble";
+  const data=(team?scrambleHoles:strokeHoles).filter(x=>Number(x.week)===Number(week));
+  if(!data.some(x=>team?numeric(x.strokes):numeric(x.kyle)||numeric(x.ryan))){
+    return `<div class="empty compact"><strong>Scorecard not posted yet</strong><p>The 18-hole ${team?"team scramble":"individual stroke-play"} scores will appear here after verification.</p></div>`;
+  }
+  const tile=n=>{
+    const a=data.find(x=>Number(x.hole)===n)||{};
+    return `<div class="hole-tile"><div class="hole-caption">HOLE ${n}<span>${numeric(a.par)?"PAR "+fmt(a.par):"PAR —"}</span></div>${team?`<div class="tile-row"><span>Team</span>${scoreBadge(a.strokes,a.par)}</div>`:`<div class="tile-row"><span>Kyle</span>${scoreBadge(a.kyle,a.par)}</div><div class="tile-row"><span>Ryan</span>${scoreBadge(a.ryan,a.par)}</div>`}</div>`;
+  };
+  const totals=team?[["Team","strokes"]]:[["Kyle","kyle"],["Ryan Grace","ryan"]];
+  const half=(start,end,title)=>`<div class="nine-block"><div class="nine-heading"><strong>${title}</strong><span>Holes ${start}–${end}</span></div><div class="hole-grid">${Array.from({length:9},(_,i)=>tile(start+i)).join("")}</div></div>`;
+  return `<div class="scorecard-detail">${half(1,9,"Front nine")}${half(10,18,"Back nine")}<div class="split-totals"><div class="split-head"><span>Score</span><span>OUT</span><span>IN</span><span>18 HOLES</span></div>${totals.map(([name,key])=>`<div class="split-line"><strong>${esc(name)}</strong><span>${fmt(nineTotal(data,key,1,9))}</span><span>${fmt(nineTotal(data,key,10,18))}</span><strong>${fmt(nineTotal(data,key,1,18))}</strong></div>`).join("")}</div><div class="score-legend"><span><i class="score-eagle"></i>Eagle+</span><span><i class="score-birdie"></i>Birdie</span><span><i class="score-par"></i>Par</span><span><i class="score-bogey"></i>Bogey</span><span><i class="score-double"></i>Double+</span></div></div>`;
+}
+
+function weeklyPerformance(r){
+  const fields=[["Fairways hit","kFw","gFw",""],["Greens in regulation","kGir","gGir"," / 18"],["Average drive","kDrive","gDrive"," yd"],["Putts made","kFeet","gFeet"," ft"]];
+  const any=fields.some(([,,a,b])=>numeric(r[a])||numeric(r[b]));
+  if(!any)return `<p class="muted-note">Individual GSPro round-level statistics will appear when the screenshots have been logged. No per-hole fairway, GIR or putting statistics are inferred.</p>`;
+  return `<div class="round-metric-grid">${fields.map(([label,k,g,unit])=>`<div class="round-metric"><div class="tiny-heading">${esc(label)}</div><div class="duo-stats"><span>Kyle <strong>${numeric(r[k])?fmt(r[k])+unit:"—"}</strong></span><span>Ryan <strong>${numeric(r[g])?fmt(r[g])+unit:"—"}</strong></span></div></div>`).join("")}</div>`;
+}
+
+function weekPage(){
+  const s=schedule.find(x=>Number(x.week)===Number(selectedWeek))||schedule[0];
+  if(!s)return `<div class="empty">Tour schedule unavailable.</div>`;
+  const r=getResult(s.week),status=weekStatus(s);
+  const safeLink=(u,label)=>/^https:\/\/[^\s"<>]+$/.test(String(u||""))?`<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(label)} ↗</a>`:"";
+  const course=(round,name,gs,tee,fw,gr,wind,pins,gimme,source)=>`<div class="round-course"><div class="tiny-heading">ROUND ${round} · 18 HOLES</div><h3>${esc(name)}</h3><div class="course-tees">${esc(tee||"Tee TBD")}</div><div class="muted-note">GSPro: ${esc(gs||name)}</div><div class="course-detail-grid"><span>Gimme <strong>${esc(gimme||"—")}</strong></span><span>Wind <strong>${esc(wind||"—")}</strong></span><span>Fairways <strong>${esc(fw||"—")}</strong></span><span>Greens <strong>${esc(gr||"—")}</strong></span><span>Pins <strong>${esc(pins||"—")}</strong></span><span>Stimp <strong>${esc(s.stimp||11)}</strong></span></div>${safeLink(source,"GSPro course listing")}</div>`;
+  const prev=Number(s.week)>1?`<a class="quiet-link" href="#/week/${Number(s.week)-1}">← Week ${Number(s.week)-1}</a>`:"<span></span>";
+  const next=Number(s.week)<schedule.length?`<a class="quiet-link" href="#/week/${Number(s.week)+1}">Week ${Number(s.week)+1} →</a>`:"<span></span>";
+  return `<section class="section detail-page"><div class="detail-utility"><a href="#/schedule" class="quiet-link">← Full tour</a><span class="tag">${esc(status)}</span></div><div class="eyebrow">WEEK ${esc(s.week)} · ${esc(prettyDate(s.date))}</div><h1 class="detail-heading">${esc(s.theme)}</h1><p class="lede">Two courses. Thirty-six holes. One night. <strong>${esc(s.realism||"Force Realistic")} · Stimp ${esc(s.stimp||11)}</strong></p><div class="detail-actions"><a class="linkbutton" href="#/results">All results</a><button type="button" class="linkbutton" data-share-week="${esc(s.week)}">Share this week <span aria-hidden="true">↗</span></button></div><div class="round-two-grid">${course(1,s.scramble,s.scrambleGs,s.teeScramble,s.scrambleFairway,s.scrambleGreen,s.windScramble,s.pinsScramble,s.gimmeScramble,s.sourceScramble)}${course(2,s.stroke,s.strokeGs,s.teeStroke,s.strokeFairway,s.strokeGreen,s.windStroke,s.pinsStroke,s.gimmeStroke,s.sourceStroke)}</div><div class="sectiontop"><div><h2>Round 1 · Two-man scramble</h2><p>${esc(s.scramble)} · 2-foot gimmes</p></div><div class="result-chip">Team ${fmt(r.scrambleGross)} <span>${sign(r.scrambleToPar)}</span></div></div>${roundScoreboard("scramble",s.week)}<div class="sectiontop scores-gap"><div><h2>Round 2 · Individual stroke play</h2><p>${esc(s.stroke)} · 5-foot gimmes</p></div></div><div class="player-summary"><div class="score-summary"><span>KYLE HISCOCK</span><strong>${fmt(r.kyleGross)}</strong><small>${sign(r.kyleToPar)}</small></div><div class="score-summary"><span>RYAN GRACE</span><strong>${fmt(r.ryanGross)}</strong><small>${sign(r.ryanToPar)}</small></div><div class="score-summary"><span>WINTER CUP WINNER</span><strong class="winner-name">${esc(r.winner||"—")}</strong></div></div>${roundScoreboard("stroke",s.week)}<div class="card weekly-stats"><h3>Stroke-play round stats</h3>${weeklyPerformance(r)}</div><div class="detail-utility bottom-switch">${prev}${next}</div></section>`;
+}
+
+function getMetric(){
+  const configs={
+    toPar:{label:"Score vs. par",k:"kyleToPar",r:"ryanToPar",unit:" strokes",dec:1},
+    gross:{label:"Gross score",k:"kyleGross",r:"ryanGross",unit:" strokes",dec:0},
+    fw:{label:"Fairways hit",k:"kFw",r:"gFw",unit:" fairways",dec:0},
+    gir:{label:"Greens in regulation",k:"kGir",r:"gGir",unit:" greens",dec:0},
+    drive:{label:"Average driving distance",k:"kDrive",r:"gDrive",unit:" yards",dec:1},
+    feet:{label:"Feet of putts made",k:"kFeet",r:"gFeet",unit:" feet",dec:1},
+    birdies:{label:"Birdies",k:"kBirdies",r:"gBirdies",unit:" birdies",dec:0}
+  };
+  return configs[trendMetric]||configs.toPar;
+}
+
+function trendChart(){
+  const m=getMetric(),values=results.filter(x=>numeric(x[m.k])||numeric(x[m.r]));
+  if(!values.length)return `<div class="empty compact"><strong>No trend data yet</strong><p>As soon as Kyle and Ryan log their stroke-play scores or full-round GSPro stats, the chart will show each week’s results.</p></div>`;
+  const arr=values.flatMap(r=>[r[m.k],r[m.r]]).filter(numeric).map(Number);
+  let lo=Math.min(...arr),hi=Math.max(...arr);
+  if(hi===lo){hi+=1;lo-=1}else{const pad=(hi-lo)*.15;hi+=pad;lo-=pad;}
+  const x=w=>54+(Math.max(1,Math.min(16,Number(w)))-1)*(660/15);
+  const y=v=>36+(1-(Number(v)-lo)/(hi-lo))*197;
+  const fmtTick=n=>Number(n).toFixed(m.dec===0?0:1);
+  const grid=Array.from({length:5},(_,i)=>{const yy=36+i*197/4,t=hi-i*(hi-lo)/4;return `<line x1="54" y1="${yy}" x2="716" y2="${yy}" stroke="#496b5c" stroke-width="1" opacity=".42"/><text x="43" y="${yy+4}" fill="#b8cbc1" font-size="11" text-anchor="end">${fmtTick(t)}</text>`;}).join("");
+  const series=(key,color,name)=>{
+    const points=values.filter(r=>numeric(r[key])).sort((a,b)=>Number(a.week)-Number(b.week));
+    const segments=points.slice(1).map((v,i)=>{const p=points[i];return `<line x1="${x(p.week)}" y1="${y(p[key])}" x2="${x(v.week)}" y2="${y(v[key])}" stroke="${color}" stroke-width="3" stroke-linecap="round"/>`;}).join("");
+    const dots=points.map(v=>`<circle cx="${x(v.week)}" cy="${y(v[key])}" r="5" fill="${color}" stroke="#102620" stroke-width="2"><title>${name} · Week ${v.week}: ${Number(v[key]).toFixed(m.dec)}${m.unit}</title></circle>`).join("");
+    return segments+dots;
+  };
+  const ticks=[1,4,8,12,16].map(w=>`<text x="${x(w)}" y="263" fill="#b8cbc1" font-size="12" text-anchor="middle">W${w}</text>`).join("");
+  return `<div class="chart-wrap"><svg role="img" aria-label="${esc(m.label)} by tour week for Kyle Hiscock and Ryan Grace" viewBox="0 0 760 278" class="trend-svg" xmlns="http://www.w3.org/2000/svg">${grid}${ticks}${series(m.k,"#e9b477","Kyle")}${series(m.r,"#a5dfb1","Ryan")}</svg><div class="chart-legend"><span><i class="legend-kyle"></i>Kyle Hiscock</span><span><i class="legend-ryan"></i>Ryan Grace</span></div></div>`;
+}
+
 function statPage(){
-const d=stats(),recorded=results.filter(r=>numeric(r.kFw)||numeric(r.gFw)||numeric(r.kGir)||numeric(r.gGir)||numeric(r.kDrive)||numeric(r.gDrive)||numeric(r.kFeet)||numeric(r.gFeet));
-return `<section class="section" style="padding-top:32px">${h('Player & hole analytics','Hole-by-hole scoring, with individual GSPro performance metrics recorded separately for the complete stroke-play round.')}<div class="kpis">${kpi('Kyle avg ±Par',d.kavg,'completed stroke rounds')}${kpi('Ryan Grace avg ±Par',d.gavg,'completed stroke rounds')}${kpi('Kyle best gross',d.bestKyle,'18-hole stroke play')}${kpi('Ryan Grace best gross',d.bestRyan,'18-hole stroke play')}</div><div class="card" style="margin-bottom:18px"><div class="course-head"><div><h3 style="margin-bottom:3px">Hole-by-hole scoring</h3><p class="intro">18 holes of team scramble and 18 holes of individual stroke play.</p></div><select class="filter" id="weekFilter" aria-label="Select week">${schedule.map(s=>`<option value="${s.week}" ${selectedWeek===Number(s.week)?'selected':''}>Week ${s.week}</option>`).join('')}</select></div>${holeTable()}</div><div class="card"><h3>Individual stroke-play stats · Full round only</h3>${recorded.length?`<div style="overflow:auto"><table class="standings" style="min-width:880px"><thead><tr><th>Week</th><th>Kyle FW Hits</th><th>Ryan FW Hits</th><th>Kyle GIR</th><th>Ryan GIR</th><th>Kyle Avg Drive (yd)</th><th>Ryan Avg Drive (yd)</th><th>Kyle Putts Made (ft)</th><th>Ryan Putts Made (ft)</th></tr></thead><tbody>${recorded.map(r=>`<tr><td>${r.week}</td><td>${fmt(r.kFw)}</td><td>${fmt(r.gFw)}</td><td>${fmt(r.kGir)}</td><td>${fmt(r.gGir)}</td><td>${fmt(r.kDrive)}</td><td>${fmt(r.gDrive)}</td><td>${fmt(r.kFeet)}</td><td>${fmt(r.gFeet)}</td></tr>`).join('')}</tbody></table></div>`:`<p class="intro">Individual performance data will populate when the round-level GSPro screenshots are provided. No per-hole FW/GIR or putt-distance inputs are required.</p>`}</div></section>`;}
+  const d=stats(),m=getMetric(),r=getResult(selectedWeek);
+  const metricOpts=[["toPar","Score vs. par"],["gross","Gross score"],["fw","Fairways hit"],["gir","GIR"],["drive","Average drive"],["feet","Putts made (feet)"],["birdies","Birdies"]];
+  return `<section class="section"><div class="sectiontop"><div><h2>Player comparisons</h2><p>Week-by-week progress, using complete stroke-play rounds and captured GSPro statistics only.</p></div></div><div class="kpis">${kpi("Kyle average ± par",d.kavg,"completed rounds")}${kpi("Ryan average ± par",d.gavg,"completed rounds")}${kpi("Kyle best gross",d.bestKyle,"18-hole stroke play")}${kpi("Ryan best gross",d.bestRyan,"18-hole stroke play")}</div><div class="card trend-panel"><div class="course-head"><div><h3>${esc(m.label)} · Seasonal trend</h3><p class="intro">Kyle vs. Ryan across the 16-week tour</p></div><label class="select-stack">Metric<select id="trendMetric" class="filter" aria-label="Choose trend metric">${metricOpts.map(([key,label])=>`<option value="${key}" ${trendMetric===key?"selected":""}>${esc(label)}</option>`).join("")}</select></label></div>${trendChart()}</div><div class="card weekly-stats"><div class="course-head"><div><h3>Full-round performance</h3><p class="intro">Select any week to compare available GSPro stats.</p></div><label class="select-stack">Week<select class="filter" id="weekFilter" aria-label="Select week">${schedule.map(s=>`<option value="${s.week}" ${selectedWeek===Number(s.week)?"selected":""}>Week ${s.week}</option>`).join("")}</select></label></div>${weeklyPerformance(r)}<a class="quiet-link inline-week" href="#/week/${selectedWeek}">View Week ${selectedWeek} scorecards →</a></div></section>`;
+}
+
+function recordsPage(){
+  const individual=completed(),teams=completedTeam(),entries=individual.flatMap(r=>[{n:"Kyle Hiscock",gross:r.kyleGross,toPar:r.kyleToPar,birdies:r.kBirdies,week:Number(r.week)},{n:"Ryan Grace",gross:r.ryanGross,toPar:r.ryanToPar,birdies:r.gBirdies,week:Number(r.week)}]);
+  const byMin=(rows,key)=>rows.filter(r=>numeric(r[key])).sort((a,b)=>Number(a[key])-Number(b[key]))[0];
+  const byMax=(rows,key)=>rows.filter(r=>numeric(r[key])).sort((a,b)=>Number(b[key])-Number(a[key]))[0];
+  const best=byMin(entries,"gross"),rel=byMin(entries,"toPar"),bird=byMax(entries,"birdies"),team=byMin(teams,"scrambleGross");
+  const margins=individual.map(r=>({...r,margin:Math.abs(Number(r.kyleGross)-Number(r.ryanGross))})).filter(x=>x.margin>0);
+  const blowout=byMax(margins,"margin");
+  let active="",count=0,peak={n:"",count:0,week:0};
+  for(const r of individual.slice().sort((a,b)=>Number(a.week)-Number(b.week))){
+    const w=Number(r.kyleGross)<Number(r.ryanGross)?"Kyle Hiscock":Number(r.ryanGross)<Number(r.kyleGross)?"Ryan Grace":"Tie";
+    if(w==="Tie"){active="";count=0;continue;}
+    count=w===active?count+1:1;active=w;
+    if(count>peak.count)peak={n:w,count,week:r.week};
+  }
+  const card=(label,value,detail,week)=>`<article class="record-card"><div class="record-label">${esc(label)}</div><div class="record-number">${esc(value)}</div><p>${esc(detail)}</p>${week?`<a class="quiet-link" href="#/week/${Number(week)}">Week ${Number(week)} scorecard →</a>`:"<span class='pending-note'>Awaiting official scores</span>"}</article>`;
+  return `<section class="section">${h("The record book","Personal bests, team milestones, and head-to-head history. Only verified results count.")}<div class="record-grid">${card("Lowest individual gross",best?fmt(best.gross):"—",best?`${best.n} · Week ${best.week}`:"First 18-hole stroke round",best?.week)}${card("Best round vs. par",rel?sign(rel.toPar):"—",rel?`${rel.n} · Week ${rel.week}`:"First completed stroke round",rel?.week)}${card("Largest victory",blowout?`${fmt(blowout.margin)} strokes`:"—",blowout?`${Number(blowout.kyleGross)<Number(blowout.ryanGross)?"Kyle Hiscock":"Ryan Grace"} · Week ${blowout.week}`:"First decisive head-to-head round",blowout?.week)}${card("Most birdies in a round",bird?fmt(bird.birdies):"—",bird?`${bird.n} · Week ${bird.week}`:"First complete scorecard",bird?.week)}${card("Lowest team scramble",team?fmt(team.scrambleGross):"—",team?`Week ${team.week} · ${team.scramble||"team scramble"}`:"First 18-hole scramble",team?.week)}${card("Longest win streak",peak.count?`${peak.count} ${peak.count===1?"win":"wins"}`:"—",peak.count?`${peak.n} · consecutive played rounds`:"First head-to-head win",peak.count?peak.week:null)}</div><p class="muted-note record-notes">Records update from the Google Sheet. Scramble records are shared; only individual stroke play awards Winter Cup points.</p></section>`;
+}
 function rules(){
 const items=[['01 · Round order','Round 1: 18-hole two-man scramble on one GSPro course. Round 2: 18-hole individual gross stroke play on a different course.'],['02 · Cup standings','Round 2 stroke-play winner earns two points; a tie earns one point each. Round 1 scramble is a shared team-record challenge.'],['03 · Standard simulator settings','Stimp 11, Force Realistic, no mulligans, 6,000–7,000-yard tee selection. Scramble uses 2-foot gimmes; stroke play uses 5-foot gimmes.'],['04 · Weekly course presets','Course-specific fairway/green firmness, pins and wind vary to reflect each course’s style. These are tour presets, not guaranteed real-world turf conditions.'],['05 · What to photograph','After Round 1: 18-hole scramble team scorecard. After Round 2: 18-hole Kyle/Ryan Grace scorecard plus each individual’s full-round GSPro stats screenshot.'],['06 · Performance tracking','Only the stroke-play stats screenshots supply round totals for FW Hit, GIR, average driving distance and feet of putts made. The hole-by-hole table is scores only.'],['07 · Data integrity','No stats are estimated from hole scores. Missing values remain blank; 18-hole totals require all 18 scores. Scramble tracks hole scores and automatic scoring categories.'],['08 · Winner & records','After 16 weeks the most Winter Cup points wins; tie breakers are stroke wins, average score versus par, and a playoff. Scramble records belong to both players.']];
 return `<section class="section" style="padding-top:32px">${h('Tour rules & photo workflow','Two courses, consistent settings, round totals separate from hole scores.')}<div class="rulesgrid">${items.map(x=>`<div class="card rule"><h3>${esc(x[0])}</h3><p>${esc(x[1])}</p></div>`).join('')}</div><p class="intro" style="margin-top:14px">Unofficial simulator tour; scores are not automatically WHS/GHIN handicap rounds. Check GSPro course files at the venue.</p></section>`;}
-function render(){document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.tab===page));document.getElementById('app').innerHTML=({home,schedule:tour,results:resultsPage,stats:statPage,rules})[page]();const wk=document.getElementById('weekFilter');if(wk)wk.addEventListener('change',e=>{selectedWeek=Number(e.target.value);render()});}
-document.addEventListener('click',e=>{const w=e.target.closest('[data-show-week]');if(w){selectedWeek=Number(w.dataset.showWeek);page='stats';render();window.scrollTo({top:0,behavior:'smooth'});return;}const b=e.target.closest('[data-tab]');if(b){page=b.dataset.tab;render();window.scrollTo({top:0,behavior:'smooth'});}});
-document.getElementById('homeBrand').addEventListener('click',e=>{e.preventDefault();page='home';render()});
+function routeFromHash(){
+  const match=String(location.hash||"").match(/^#\/(home|schedule|results|stats|records|rules|week)(?:\/(\d{1,2}))?$/);
+  page=match?match[1]:"home";
+  if(match&&match[2]){const w=Number(match[2]);if(w>=1&&w<=schedule.length)selectedWeek=w;}
+  render();
+}
+
+function render(){
+  document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.tab===page));
+  const pages={home,schedule:tour,results:resultsPage,stats:statPage,records:recordsPage,rules,week:weekPage};
+  document.getElementById("app").innerHTML=pages[page]();
+  const wk=document.getElementById("weekFilter");
+  if(wk)wk.addEventListener("change",e=>{selectedWeek=Number(e.target.value);location.hash="#/stats/"+selectedWeek;render();});
+  const metric=document.getElementById("trendMetric");
+  if(metric)metric.addEventListener("change",e=>{trendMetric=e.target.value;render();});
+}
+
+function shareWeek(week){
+  const link=new URL("#/week/"+week,location.href).href;
+  if(navigator.share){navigator.share({title:"Winter Grind Tour · Week "+week,url:link}).catch(()=>{});return;}
+  if(navigator.clipboard?.writeText){navigator.clipboard.writeText(link).then(()=>{const e=document.querySelector("[data-share-week]");if(e)e.textContent="Link copied ✓";}).catch(()=>window.prompt("Copy this week link:",link));return;}
+  window.prompt("Copy this week link:",link);
+}
+
+function handleClick(e){
+  const share=e.target.closest("[data-share-week]");
+  if(share){shareWeek(Number(share.dataset.shareWeek));return;}
+  const w=e.target.closest("[data-show-week]");
+  if(w){location.hash="#/week/"+Number(w.dataset.showWeek);return;}
+  const b=e.target.closest("[data-tab]");
+  if(b){location.hash="#/"+b.dataset.tab;}
+}
+document.addEventListener("click",handleClick);
+window.addEventListener("hashchange",routeFromHash);
+document.getElementById("homeBrand").addEventListener("click",e=>{e.preventDefault();location.hash="#/home";});
+
 window.receiveLeagueData=function(data){if(!data||!Array.isArray(data.schedule)||!Array.isArray(data.results)){feedState='unavailable';render();return;}schedule=data.schedule.length?data.schedule.map(x=>({...base.find(b=>Number(b.week)===Number(x.week)),...x})):schedule;results=data.results;strokeHoles=Array.isArray(data.strokeHoles)?data.strokeHoles:[];scrambleHoles=Array.isArray(data.scrambleHoles)?data.scrambleHoles:[];feedState='ready';render();};
 if(APPS_SCRIPT_URL){const script=document.createElement('script');script.src=APPS_SCRIPT_URL+(APPS_SCRIPT_URL.includes('?')?'&':'?')+'callback=receiveLeagueData';script.async=true;script.onerror=()=>{feedState='unavailable';render()};document.head.appendChild(script)}
 
-render();
+routeFromHash();
 
 </script></body></html>
