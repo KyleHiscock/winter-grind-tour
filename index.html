@@ -323,7 +323,7 @@ function weeklyRecap(week){
  }
  return `<div class="recap-summary"><div class="tiny-heading">THE WEEK IN REVIEW</div><p>${esc(parts.join(" "))}</p>${records.length?`<div class="recap-records">${records.map(x=>`<span>★ ${esc(x)}</span>`).join("")}</div>`:""}</div>`;
 }
-function yardageFromTee(s){const x=String(s||"").match(/([0-9]{1,2}),([0-9]{3})\s*yd/);return x?Number(x[1]+x[2]):null}
+function yardageFromTee(s){const v=String(s||"");if(/\bTBD\b|unverified|\btarget\b/i.test(v))return null;const x=v.match(/([0-9]{1,2}),([0-9]{3})\s*yd/);return x?Number(x[1]+x[2]):null}
 function teeAdvice(tee,kind,firmness){
  const yd=yardageFromTee(tee);
  if(yd==null)return {type:"verify",message:"Tee not verified — select a suitable tee in GSPro, ideally around 6,200–6,600 yards."};
