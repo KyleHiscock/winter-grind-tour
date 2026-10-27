@@ -294,9 +294,10 @@ function trendChart(){
   let lo=Math.min(...arr),hi=Math.max(...arr);
   if(hi===lo){hi+=1;lo-=1}else{const pad=(hi-lo)*.15;hi+=pad;lo-=pad;}
   const x=w=>54+(Math.max(1,Math.min(16,Number(w)))-1)*(660/15);
-  const y=v=>36+(1-(Number(v)-lo)/(hi-lo))*197;
+  const lowerIsBetter=trendMetric==='toPar'||trendMetric==='gross';
+  const y=v=>36+(lowerIsBetter?(Number(v)-lo)/(hi-lo):1-(Number(v)-lo)/(hi-lo))*197;
   const fmtTick=n=>Number(n).toFixed(m.dec===0?0:1);
-  const grid=Array.from({length:5},(_,i)=>{const yy=36+i*197/4,t=hi-i*(hi-lo)/4;return `<line x1="54" y1="${yy}" x2="716" y2="${yy}" stroke="#496b5c" stroke-width="1" opacity=".42"/><text x="43" y="${yy+4}" fill="#b8cbc1" font-size="11" text-anchor="end">${fmtTick(t)}</text>`;}).join("");
+  const grid=Array.from({length:5},(_,i)=>{const yy=36+i*197/4,t=lowerIsBetter?lo+i*(hi-lo)/4:hi-i*(hi-lo)/4;return `<line x1="54" y1="${yy}" x2="716" y2="${yy}" stroke="#496b5c" stroke-width="1" opacity=".42"/><text x="43" y="${yy+4}" fill="#b8cbc1" font-size="11" text-anchor="end">${fmtTick(t)}</text>`;}).join("");
   const series=(key,color,name)=>{
     const points=values.filter(r=>numeric(r[key])).sort((a,b)=>Number(a.week)-Number(b.week));
     const segments=points.slice(1).map((v,i)=>{const p=points[i];return `<line x1="${x(p.week)}" y1="${y(p[key])}" x2="${x(v.week)}" y2="${y(v[key])}" stroke="${color}" stroke-width="3" stroke-linecap="round"/>`;}).join("");
@@ -304,7 +305,7 @@ function trendChart(){
     return segments+dots;
   };
   const ticks=[1,4,8,12,16].map(w=>`<text x="${x(w)}" y="263" fill="#b8cbc1" font-size="12" text-anchor="middle">W${w}</text>`).join("");
-  return `<div class="chart-wrap"><svg role="img" aria-label="${esc(m.label)} by tour week for Kyle Hiscock and Ryan Grace" viewBox="0 0 760 278" class="trend-svg" xmlns="http://www.w3.org/2000/svg">${grid}${ticks}${series(m.k,"#e9b477","Kyle")}${series(m.r,"#a5dfb1","Ryan")}</svg><div class="chart-legend"><span><i class="legend-kyle"></i>Kyle Hiscock</span><span><i class="legend-ryan"></i>Ryan Grace</span></div></div>`;
+  return `<div class="chart-wrap"><svg role="img" aria-label="${esc(m.label)} by tour week for Kyle Hiscock and Ryan Grace" viewBox="0 0 760 278" class="trend-svg" xmlns="http://www.w3.org/2000/svg">${grid}${ticks}${series(m.k,"#e9b477","Kyle")}${series(m.r,"#a5dfb1","Ryan")}</svg><div class="chart-legend"><span><i class="legend-kyle"></i>Kyle Hiscock</span><span><i class="legend-ryan"></i>Ryan Grace</span></div><p class="muted-note" style="text-align:center;margin:8px 0 0">${lowerIsBetter?'Lower scores are better.':'Higher values are better.'} Hover over a point for its exact weekly value.</p></div>`;
 }
 
 function statPage(){
