@@ -31,7 +31,7 @@ The published HTML is configured with a read-only Apps Script feed. If the feed 
 3. Review: this script publishes the tour schedule, score totals, hole scores and **round-level** FW Hit/GIR/drive/putting metrics. It does **not** publish uploaded photos, notes, emails or addresses.
 4. Click **Deploy → New deployment → Web app**. Set **Execute as: Me** and, **only if you want the scores public on the site**, **Who has access: Anyone**. Authorize Google permissions.
 5. Copy the actual web app URL ending in `/exec`. Edit `index.html` to set `const APPS_SCRIPT_URL="YOUR_ACTUAL_EXEC_URL";`, then commit.
-6. Load the site and confirm the status badge reads **Sheet connected**. Future score entries will be reflected when the page reloads.
+6. Reload the site and verify new schedule/results data appears. The technical connection-status badge is intentionally hidden from public visitors.
 7. Never include private image links or confidential spreadsheet tabs in the public feed. The source sheet itself may remain private.
 
 ## Public UX — October 27, 2026 upgrade
@@ -61,6 +61,16 @@ GSPro course names, installations and tees require confirmation at Skramble. Thi
 
 ## Extended season research (Weeks 17–25)
 
-Added nine Tuesday sessions February 16–April 13, 2027, with 18 new GSPro models. Course pairings: Bandon Dunes Encore (Old Macdonald + Bandon Dunes); Open Championship Rewind (Royal St Georges + Royal Birkdale); Northern Ireland Links Quest (DPC Portrush + DPC County Down); Nevada Desert Spectacular (Wolf Creek + Shadow Creek); St. Patrick's Week Challenge (Old Head + Adare Manor); Atlantic Coast Clash (Sea Island Seaside + Kiawah Ocean); American Major Tests (Prairie Knolls + Oakmont CC); Championship Dress Rehearsal (Quail Hollow + Valhalla); Spring Cup Grand Finale (Riviera + Pine Valley).
+Added nine Tuesday sessions February 16–April 13, 2027, with 18 new GSPro models. Course pairings: Ozark Mountain Escape (Paynes Valley + Ozarks National Golf Course); Open Championship Rewind (Royal St Georges + Royal Birkdale); Northern Ireland Links Quest (DPC Portrush + DPC County Down); Nevada Desert Spectacular (Wolf Creek + Shadow Creek); St. Patrick's Week Challenge (Old Head + Adare Manor); Atlantic Coast Clash (Cabot Cliffs + Kiawah Ocean); American Major Tests (Prairie Knolls + Oakmont CC); Championship Dress Rehearsal (Quail Hollow + Valhalla); Spring Cup Grand Finale (Riviera + Pine Valley).
 
 Every selected tee was checked against a course-specific public [The Course View](https://thecourseview.com/) page for 6,000–7,000 yards. See the private spreadsheet's Schedule and Course Bank tabs for exact tee colors, yardages, public source links, and weekly conditions. All nine weeks are two full 18-hole rounds. Venue-specific installation and course version cannot be confirmed until checking Skramble's GSPro PCs. The existing Apps Script feed is range-independent and reads all added rows automatically.
+
+## Community favorites refresh — October 27, 2026
+
+Four approved upgrades preserve the existing 25-week / 50-course structure:
+- Week 2 **Desert After Dark**: Silverleaf Club (Black, 6,916 yd) replaces TPC Summerlin as Round 1 scramble; TPC Scottsdale remains Round 2.
+- Week 7 **The Green Jacket Invitational**: East Lake Golf Club (Blue, 6,482 yd) replaces Druid Hills as Round 1; Augusta-inspired Georgia Golf Club remains Round 2.
+- Week 17 **Ozark Mountain Escape** replaces Bandon Dunes Encore: Payne's Valley (GSPro name **Paynes Valley**, Green, 6,815 yd) scramble, followed by Ozarks National Golf Course (Blue, 6,520 yd) stroke play. Bandon Dunes + Old Macdonald stay in the reserve/alternate pool.
+- Week 22 **Atlantic Coast Clash**: Cabot Cliffs (Black, 6,685 yd) replaces Sea Island Seaside as Round 1, followed by Kiawah Ocean.
+
+All source links and course-specific firmness/wind settings are maintained in the live Schedule and Course Bank sheets. GSPro availability on the venue's local PC still requires checking.
