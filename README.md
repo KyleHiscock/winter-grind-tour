@@ -91,3 +91,14 @@ All source links and course-specific firmness/wind settings are maintained in th
 - Week 25 **Wisconsin Sandhills Showdown** (April 13, 2027): Round 1 **Mammoth Dunes** (Blue, 6,590 yd); Round 2 **Sand Valley** (Blue, 6,540 yd). Both use Firm fairways, Firm greens, Breezy wind, Stimp 11 to emulate strategic sandy ground-game golf.
 - Week 26 **Spring Cup Grand Finale** (April 20, 2027): Original Riviera scramble followed by Pine Valley stroke play, moved from Week 25 so the championship still ends on the final week. All 26 stroke rounds award normal Winter Cup points.
 - Google Sheets score entry, Results formulas, Stroke Holes, Scramble Holes, Stats Overrides, Photo Log, Practice Log, Dashboard and Scramble Trends now extend through Week 26. The score feed automatically reads the new entries; the website embeds all 26 weeks and preserves private sheet access.
+
+## UX refinement — 26-week edition
+
+- **Home dashboard** highlights the next upcoming or unfinished week, the latest submitted result, and Winter Cup standings. The Cup-race panel adds head-to-head wins, ties, current winning streak, and remaining rounds; it only declares a mathematical clinch when a points lead exceeds the maximum remaining points.
+- **The Tour** filters Upcoming / Completed / All Weeks and offers a jump-to-week menu. Completed means both the team scramble and both individual stroke rounds are posted; incomplete weeks remain accessible.
+- **Pre-round setup cards** present GSPro course search name, tees, firmness, wind, pins, Stimp 11, gimmes, realism and mulligans for both rounds, with a Copy Settings action.
+- **Tee-length guidance** recognizes the players' 230–240-yard driver carry and roughly 250–260-yard total drive. Around 6,200–6,500 yards is a reasonable normal stroke-play target; 6,600–6,800 yards is acceptable for a suitable championship or open/firm layout. Individual tee selections above 6,800 yards get a stronger review note. No alternate color/yardage is invented. The St Andrews-inspired Sovereignbyre course tee remains **unverified** pending an in-simulator check.
+- **Weekly recaps** are composed deterministically from actual posted scores and statistics; they report winners, margins, Cup points, team scramble results and supported record breaks only. No model-generated speculation or fake stats.
+- **Mobile** includes a Tour / Results / Stats bottom shortcut, adaptive setup cards, and consistent week-to-week scroll positioning.
+
+The Google Sheets Apps Script feed, scoring rules, tour calendar and privately held score-entry data were not altered by this UX pass. The cards recommend verifying shorter tee choices in GSPro where warranted; the source Schedule/Course Bank retain previously researched tees until verification.
