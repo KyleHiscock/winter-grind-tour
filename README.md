@@ -34,6 +34,18 @@ The published HTML is configured with a read-only Apps Script feed. If the feed 
 6. Load the site and confirm the status badge reads **Sheet connected**. Future score entries will be reflected when the page reloads.
 7. Never include private image links or confidential spreadsheet tabs in the public feed. The source sheet itself may remain private.
 
+## Public UX — October 27, 2026 upgrade
+
+The Evergreen site includes five public-facing experiences, all powered by the existing read-only Apps Script feed:
+
+1. **This Week** spotlights the selected Tuesday with Round 1 scramble and Round 2 stroke-play courses, tees, and a link to its detailed page.
+2. **18-hole scorecards** show front-nine/back-nine score tiles, out/in/total calculations, and relative-to-par score coloring. Incomplete holes stay blank.
+3. **Player trends** compare Kyle Hiscock and Ryan Grace across gross scores, score versus par, fairways hit, GIR, average driving distance, feet of putts made, and birdies. Missing data is not treated as zero.
+4. **Record Book** tracks verified season lows, best score vs. par, largest margin, most birdies, lowest scramble round and longest completed-round winning streak.
+5. **Mobile week pages and sharing** use permanent hash URLs like `#/week/1`. The page has a week-to-week selector and a Share link.
+
+The public score-entry Google Sheet link and internal connection-status badge were removed from the website. The existing private spreadsheet remains owner-only; only the approved feed data is publicly accessible.
+
 ## How to log weekly scores
 
 After Tuesday's two rounds, post the GSPro screenshots in the ChatGPT conversation:
