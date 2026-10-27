@@ -20,11 +20,11 @@ Evergreen website for **Kyle Hiscock** and **Ryan Grace** at Skramble House of G
 4. The normal address is https://kylehiscock.github.io/winter-grind-tour/ once Pages is active. Do not assume it is live until GitHub Pages reports a deployment and the site opens.
 5. This repo does **not** affect any HGGL repository.
 
-## Live Google Sheets scoring — separate deployment step
+## Live Google Sheets scoring — administrator setup
 
-[Open the private score-entry spreadsheet](https://docs.google.com/spreadsheets/d/1VAYMas0R1-ssGaJbEpbQS8lxWdMR1Cev_Yd-p8etZ6E/edit)
+The score-entry Google Sheet is maintained privately by the tour organizer and is not linked from the public website.
 
-The published HTML currently contains `const APPS_SCRIPT_URL=""`. It works without the feed, showing the schedule and empty season standings. To enable live results:
+The published HTML is configured with a read-only Apps Script feed. If the feed ever needs to be redeployed:
 
 1. Open the Google Sheet → **Extensions → Apps Script**.
 2. Copy `apps-script/Code.gs` into the project's `Code.gs`; save.
