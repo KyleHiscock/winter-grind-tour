@@ -102,3 +102,15 @@ All source links and course-specific firmness/wind settings are maintained in th
 - **Mobile** includes a Tour / Results / Stats bottom shortcut, adaptive setup cards, and consistent week-to-week scroll positioning.
 
 The Google Sheets Apps Script feed, scoring rules, tour calendar and privately held score-entry data were not altered by this UX pass. The cards recommend verifying shorter tee choices in GSPro where warranted; the source Schedule/Course Bank retain previously researched tees until verification.
+
+## Verified tee-distance review — October 27, 2026
+
+After reviewing 52 course assignments against the players' approximately 230–240-yard carry and 250–260-yard driver total distance, **19 tee selections** were changed using directly published GSPro course-model yardages on [The Course View](https://thecourseview.com/).
+
+- Mean individual stroke-play distance changed from **6,643 yd to 6,471 yd**, and mean scramble from **6,638 yd to 6,464 yd** (the scramble average excludes Week 8 Sovereignbyre's unverified distance).
+- Kept deliberate longer open/firm and championship tests when appropriate; all 51 currently verified tee assignments are at or below 6,800 yards.
+- The private Course Bank now includes **Tee Review Status**, **Tee Selection Rationale**, and **Previous Tee / Yards** for all 52 course assignments. Verified public course-listing yardage is not proof of installation or matching course version at Skramble.
+- Week 8 **Sovereignbyre Links** remains Tee TBD because neither an exact GSPro model tee color nor its yardage could be confirmed publicly. Choose and record a suitable GSPro tee at the venue before the round.
+- The website's 26 static schedule records and pre-round cards mirror the revised Google Sheet, and each card includes an optional **Why this tee?** explanation.
+- Only Schedule tee text/yardage and Course Bank tee data were changed; dates, themed pairings, scoring, Course Bank firmness/wind presets, 2-/5-ft gimmes, Stimp 11 and other competition rules remain unchanged.
+
