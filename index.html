@@ -258,7 +258,7 @@ function roundScoreboard(kind,week){
 
 function weeklyPerformance(r){
   const fields=[["Fairways hit","kFw","gFw",""],["Greens in regulation","kGir","gGir"," / 18"],["Average drive","kDrive","gDrive"," yd"],["Putts made","kFeet","gFeet"," ft"]];
-  const any=fields.some(([,,a,b])=>numeric(r[a])||numeric(r[b]));
+  const any=fields.some(([,k,g])=>numeric(r[k])||numeric(r[g]));
   if(!any)return `<p class="muted-note">Individual GSPro round-level statistics will appear when the screenshots have been logged. No per-hole fairway, GIR or putting statistics are inferred.</p>`;
   return `<div class="round-metric-grid">${fields.map(([label,k,g,unit])=>`<div class="round-metric"><div class="tiny-heading">${esc(label)}</div><div class="duo-stats"><span>Kyle <strong>${numeric(r[k])?fmt(r[k])+unit:"—"}</strong></span><span>Ryan <strong>${numeric(r[g])?fmt(r[g])+unit:"—"}</strong></span></div></div>`).join("")}</div>`;
 }
