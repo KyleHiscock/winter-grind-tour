@@ -125,3 +125,7 @@ The simulator must have **Mulligans ON** for both rounds so that a false shot re
 ## Par-type scoring statistics
 
 The private **Par-Type Averages** tab and the public **Player Stats** / individual week detail pages now track Kyle and Ryan's average strokes on par-3, par-4, and par-5 holes. Each figure is based on documented hole scores from **complete 18-hole stroke-play rounds only**, with the hole count displayed. No par-type data is inferred from round totals or scramble scores. These metrics update automatically as future official scorecards are added.
+
+## Completed-week presentation
+
+Once both players' verified 18-hole individual scores are present, the weekly detail page displays a theme-specific **champion banner**, an accessible cumulative-stroke-lead **head-to-head chart** (computed solely from all 18 hole records), and **weekly highlights** for birdies, the lowest nine-hole score, and the biggest par-type advantage. Shared scramble results remain separate. Missing or incomplete stroke cards do not produce a match chart or champion. Existing scorecards, full-round stats, and the weekly recap remain intact. On mobile, the chart permits horizontal scrolling without distorting hole spacing.
