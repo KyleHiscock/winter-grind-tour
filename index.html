@@ -591,6 +591,8 @@ function weeklyArtwork(s,compact=false){
  <div class="cinematic-credit">Pebble Beach 18th hole photograph: Bernard Gagnon · CC BY-SA 3.0 · cropped and darkened · Spyglass Hill named, not pictured</div></div>`;
  }
 
+ // Course-specific graphics for future weeks remain unpublished until individually approved.
+ if(n!==1)return "";
  const title=esc(s.theme||"Tour Week");
  const cover=`<svg viewBox="0 0 900 450" role="img" aria-label="Winter Grind Tour week ${n}: ${title}; scramble at ${esc(s.scramble)}, stroke play at ${esc(s.stroke)}" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bg${n}" x2="1" y2="1"><stop stop-color="${dark}"/><stop offset="1" stop-color="#0b1b19"/></linearGradient></defs><rect width="900" height="450" fill="url(#bg${n})"/><circle cx="710" cy="105" r="78" fill="${gold}" opacity=".25"/>${landscape}<rect y="295" width="900" height="155" fill="#071611" opacity=".76"/><text x="48" y="62" fill="${gold}" font-size="20" font-weight="800" letter-spacing="4">THE WINTER GRIND TOUR · WEEK ${String(n).padStart(2,"0")}</text><text x="48" y="335" font-size="37" font-weight="700" fill="white">${title.length>38?title.slice(0,37)+"…":title}</text><text x="48" y="372" fill="${gold}" font-size="17">ROUND 1 · ${esc(s.scramble)}</text><text x="48" y="402" fill="#eff5ed" font-size="17">ROUND 2 · ${esc(s.stroke)}</text></svg>`;
  return wrapWeeklyArtwork(s,compact,`<div class="theme-artwork ${compact?"compact":""}">${cover}</div>`);
