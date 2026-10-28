@@ -129,3 +129,10 @@ The private **Par-Type Averages** tab and the public **Player Stats** / individu
 ## Completed-week presentation
 
 Once both players' verified 18-hole individual scores are present, the weekly detail page displays a theme-specific **champion banner**, an accessible cumulative-stroke-lead **head-to-head chart** (computed solely from all 18 hole records), and **weekly highlights** for birdies, the lowest nine-hole score, and the biggest par-type advantage. Shared scramble results remain separate. Missing or incomplete stroke cards do not produce a match chart or champion. Existing scorecards, full-round stats, and the weekly recap remain intact. On mobile, the chart permits horizontal scrolling without distorting hole spacing.
+
+## Theme artwork and end-of-round UX (October 2026)
+
+- All 26 weeks display an individually labeled vector theme graphic on the week page and schedule card, using a consistent Winter Grind Tour visual system but rotating palette and landscapes (coast, desert, links, mountains, dunes) to reflect each weekly theme. Week names and course pairings use the authoritative schedule; visual scenery is illustrative, not course photography.
+- On mobile, completed scorecards offer Front 9 / Back 9 / Both buttons; desktop remains a traditional front- and back-nine scorecard.
+- Completed stroke-play weeks show cumulative stroke margin, tie count, largest lead and lead-change summary, based on verified hole data.
+- The completed-week share card copies a text result summary and a deep link. The site also displays quick links to latest results, next unplayed week, and the full tour.
