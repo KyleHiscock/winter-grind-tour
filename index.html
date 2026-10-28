@@ -301,6 +301,17 @@ a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid var(
 .weekly-highlight-grid span{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
 .weekly-highlight-grid strong{font-size:15px;line-height:1.35}
 @media(max-width:650px){.week-champion{padding:19px}.weekly-highlight-grid{grid-template-columns:1fr}.match-progression .course-head{flex-wrap:wrap}}
+
+.load-section{min-height:58vh;display:grid;align-items:start;padding-top:30px}
+.load-card{border:1px solid var(--line);background:var(--panel);border-radius:16px;padding:30px;max-width:700px;width:100%;margin:0 auto;text-align:center}
+.load-card h2{font:600 clamp(22px,3vw,30px) Georgia,serif;margin:13px 0 6px}
+.load-card p{color:var(--muted);font-size:13px}
+.load-pulse{width:36px;height:36px;border:3px solid var(--line);border-top-color:var(--gold);border-radius:50%;margin:0 auto;animation:load-spin 1s linear infinite}
+.load-skeleton{display:grid;gap:10px;margin:24px 0 0}
+.load-skeleton span{height:15px;border-radius:5px;background:linear-gradient(90deg,#244538,#325746,#244538);background-size:180% 100%;animation:load-shimmer 1.6s ease-in-out infinite}
+.load-skeleton span:nth-child(2){width:78%}.load-skeleton span:nth-child(3){width:57%}
+@keyframes load-spin{to{transform:rotate(360deg)}}@keyframes load-shimmer{50%{background-position:100% 0}}
+@media(prefers-reduced-motion:reduce){.load-pulse,.load-skeleton span{animation:none}}
 </style></head>
 <body><header class="topbar"><div class="shell"><div class="topinner"><a href="#" class="brand" id="homeBrand"><img class="crest-logo" src="winter-grind-logo.svg" alt="The Winter Grind Tour logo"/><div><strong>The Winter Grind Tour</strong><small>Kyle Hiscock × Ryan Grace · 2026–27</small></div></a><div class="topright"><span class="series-label">26 WEEKS · 52 COURSES</span></div></div><nav class="nav" aria-label="Series navigation"><button data-tab="home" class="active">Dashboard</button><button data-tab="schedule">The Tour</button><button data-tab="results">Results</button><button data-tab="stats">Player Stats</button><button data-tab="records">Record Book</button><button data-tab="rules">Format & Rules</button></nav></div></header><main class="shell" id="app"></main><nav class="mobile-quicknav" aria-label="Quick tour navigation"><a href="#/schedule" data-quick-tab="schedule">Tour</a><a href="#/results" data-quick-tab="results">Results</a><a href="#/stats" data-quick-tab="stats">Stats</a></nav><div class="shell"><footer class="notice"><div class="foot"><div>The Winter Grind Tour · 2026–27 · Skramble House of Golf ROC</div><div>Unofficial private series. Not affiliated with GSPro or Skramble House of Golf.</div></div></footer></div>
 <script>
@@ -619,6 +630,12 @@ function render(){
   document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.tab===page||(page==="week"&&b.dataset.tab==="schedule")));
   document.querySelectorAll("[data-quick-tab]").forEach(b=>{const active=b.dataset.quickTab===page||(page==="week"&&b.dataset.quickTab==="schedule");b.classList.toggle("active",active);if(active)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current");});
   const pages={home,schedule:tour,results:resultsPage,stats:statPage,records:recordsPage,rules,week:weekPage};
+  const loadingLive=feedState==="loading"&&["week","results","stats","records"].includes(page);
+  if(loadingLive){
+    const heading=page==="week"?"Loading this week's results":page==="results"?"Loading tour results":page==="stats"?"Loading player statistics":"Loading the record book";
+    document.getElementById("app").innerHTML=`<section class="section load-section" role="status" aria-live="polite" aria-busy="true"><div class="load-card"><div class="load-pulse"></div><h2>${heading}</h2><p>Checking the latest verified scorecards and standings…</p><div class="load-skeleton"><span></span><span></span><span></span></div></div></section>`;
+    return;
+  }
   document.getElementById("app").innerHTML=pages[page]();
   const wk=document.getElementById("weekFilter");
   if(wk)wk.addEventListener("change",e=>{selectedWeek=Number(e.target.value);location.hash="#/stats/"+selectedWeek;render();});
