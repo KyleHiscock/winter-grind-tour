@@ -109,9 +109,9 @@ After reviewing 52 course assignments against the players' approximately 230–2
 
 - Mean individual stroke-play distance changed from **6,643 yd to 6,471 yd**, and mean scramble from **6,638 yd to 6,464 yd** (the scramble average excludes Week 8 Sovereignbyre's unverified distance).
 - Kept deliberate longer open/firm and championship tests when appropriate; all 51 currently verified tee assignments are at or below 6,800 yards.
-- The private Course Bank now includes **Tee Review Status**, **Tee Selection Rationale**, and **Previous Tee / Yards** for all 52 course assignments. Verified public course-listing yardage is not proof of installation or matching course version at Skramble.
+- The private Course Bank retains tee verification status and original tee values for reference. Verified public course-listing yardage does not confirm the exact course version installed at Skramble.
 - Week 8 **Sovereignbyre Links** remains Tee TBD because neither an exact GSPro model tee color nor its yardage could be confirmed publicly. Choose and record a suitable GSPro tee at the venue before the round.
-- The website's 26 static schedule records and pre-round cards mirror the revised Google Sheet. Detailed tee-selection rationale stays in the **private** Course Bank; the public website shows only tees, distances, and any essential tee verification notices.
+- The website and spreadsheet show selected tees, distances, and any essential tee verification notices without tee-choice explanations.
 - Only Schedule tee text/yardage and Course Bank tee data were changed; dates, themed pairings, scoring, Course Bank firmness/wind presets, 2-/5-ft gimmes, Stimp 11 and other competition rules remain unchanged.
 
 
@@ -120,4 +120,8 @@ After reviewing 52 course assignments against the players' approximately 230–2
 The simulator must have **Mulligans ON** for both rounds so that a false shot registration (the simulator records a shot when no actual shot was taken) can be corrected. Mulligans may **never** be used to replay, forgive, or replace a legitimate golf shot, however poor the result.
 
 - This setting is reflected in the public pre-round cards, the Copy Settings text, the public Format & Rules page, the season dashboard, and the private Sheet's **Settings!B17**, **Schedule!T2:T27**, and **Start Here!B4**.
-- The public **Why this tee?** accordion was removed to streamline course setup. Tee selection reasoning is still available in the private Course Bank.
+- Tee-choice justification text has been removed from the site and workbook.
+
+## Par-type scoring statistics
+
+The private **Par-Type Averages** tab and the public **Player Stats** / individual week detail pages now track Kyle and Ryan's average strokes on par-3, par-4, and par-5 holes. Each figure is based on documented hole scores from **complete 18-hole stroke-play rounds only**, with the hole count displayed. No par-type data is inferred from round totals or scramble scores. These metrics update automatically as future official scorecards are added.
