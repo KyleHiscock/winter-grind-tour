@@ -271,6 +271,21 @@ a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid var(
 .traditional-total-line>span{color:var(--muted);text-align:right}.traditional-total-line .final-total{text-align:right;font-size:22px;color:var(--gold);font-variant-numeric:tabular-nums}
 .traditional-scorecard .score-legend{margin:0;padding:3px 5px 0}
 @media(max-width:680px){.traditional-scorecard{padding:10px;gap:11px}.traditional-table th,.traditional-table td{padding:8px 2px}.traditional-total-line{gap:4px;padding:10px}.traditional-nine-heading strong{font-size:18px}}
+
+/* Scorecard readability — distance row and color+shape distinctions */
+.traditional-table .yard-row th,.traditional-table .yard-row td{background:#172f29;color:#dfc797;font-weight:650;font-size:11px;white-space:nowrap}
+.traditional-table .yard-row th:first-child{background:#1b3b32}
+.traditional-table .yard-row td:last-child{background:#294837;color:#f0cb8a}
+.traditional-table .score-mark.par{border:1.5px solid #8fa99a;background:transparent;border-radius:50%;color:#f3f5ee}
+.traditional-table .score-mark.birdie{background:#2f8467;border:2px solid #9ee6c6;border-radius:50%;color:#fff}
+.traditional-table .score-mark.eagle{background:#efc36c;border:3px double #47351e;border-radius:50%;color:#1b231e;box-shadow:0 0 0 2px #efc36c66}
+.traditional-table .score-mark.bogey{background:#b6844e;border:1.5px solid #ebc08c;border-radius:5px;color:#141e18}
+.traditional-table .score-mark.double{background:#a44f55;border:2px solid #f5a7a7;border-radius:3px;color:#fff}
+.traditional-scorecard .score-legend .score-eagle{background:#efc36c;border:3px double #47351e;box-shadow:0 0 0 1px #efc36c66}
+.traditional-scorecard .score-legend .score-birdie{background:#2f8467;border:1.5px solid #9ee6c6}
+.traditional-scorecard .score-legend .score-par{background:transparent;border:1.5px solid #8fa99a}
+.traditional-scorecard .score-legend .score-bogey{background:#b6844e;border:1.5px solid #ebc08c;border-radius:3px}
+.traditional-scorecard .score-legend .score-double{background:#a44f55;border:1.5px solid #f5a7a7;border-radius:2px}
 </style></head>
 <body><header class="topbar"><div class="shell"><div class="topinner"><a href="#" class="brand" id="homeBrand"><img class="crest-logo" src="winter-grind-logo.svg" alt="The Winter Grind Tour logo"/><div><strong>The Winter Grind Tour</strong><small>Kyle Hiscock × Ryan Grace · 2026–27</small></div></a><div class="topright"><span class="series-label">26 WEEKS · 52 COURSES</span></div></div><nav class="nav" aria-label="Series navigation"><button data-tab="home" class="active">Dashboard</button><button data-tab="schedule">The Tour</button><button data-tab="results">Results</button><button data-tab="stats">Player Stats</button><button data-tab="records">Record Book</button><button data-tab="rules">Format & Rules</button></nav></div></header><main class="shell" id="app"></main><nav class="mobile-quicknav" aria-label="Quick tour navigation"><a href="#/schedule" data-quick-tab="schedule">Tour</a><a href="#/results" data-quick-tab="results">Results</a><a href="#/stats" data-quick-tab="stats">Stats</a></nav><div class="shell"><footer class="notice"><div class="foot"><div>The Winter Grind Tour · 2026–27 · Skramble House of Golf ROC</div><div>Unofficial private series. Not affiliated with GSPro or Skramble House of Golf.</div></div></footer></div>
 <script>
@@ -430,7 +445,7 @@ function scoreKind(score,par){
 }
 
 function scoreBadge(score,par){
-  return `<span class="score-mark ${scoreKind(score,par)}">${numeric(score)?esc(fmt(score)):"—"}</span>`;
+  const kind=scoreKind(score,par);return `<span class="score-mark ${kind}" title="${({eagle:"Eagle or better",birdie:"Birdie",par:"Par",bogey:"Bogey",double:"Double bogey or worse",unknown:"No score"})[kind]}">${numeric(score)?esc(fmt(score)):"—"}</span>`;
 }
 
 function nineTotal(records,key,from,to){
@@ -441,8 +456,8 @@ function nineTotal(records,key,from,to){
 function roundScoreboard(kind,week){
  const team=kind==="scramble",data=(team?scrambleHoles:strokeHoles).filter(x=>Number(x.week)===Number(week));
  if(!data.some(x=>team?numeric(x.strokes):numeric(x.kyle)||numeric(x.ryan)))return `<div class="empty compact"><strong>Scorecard not posted yet</strong><p>The 18-hole ${team?"scramble":"individual"} scores will appear when verified.</p></div>`;
- const row=(name,key,from,to,cls="")=>`<tr class="${cls}"><th scope="row">${esc(name)}</th>${Array.from({length:9},(_,i)=>{const d=data.find(x=>Number(x.hole)===from+i)||{};return `<td>${key==="par"?numeric(d.par)?fmt(d.par):"—":scoreBadge(d[key],d.par)}</td>`}).join("")}<td class="nine-sum">${fmt(nineTotal(data,key,from,to))}</td></tr>`;
- const block=(from,to,name)=>`<section class="traditional-nine"><div class="traditional-nine-heading"><strong>${name}</strong><span>HOLES ${from}–${to}</span></div><div class="traditional-scroll"><table class="traditional-table"><thead><tr><th scope="col">HOLE</th>${Array.from({length:9},(_,i)=>`<th scope="col">${from+i}</th>`).join("")}<th scope="col">${from===1?"OUT":"IN"}</th></tr></thead><tbody>${row("PAR","par",from,to,"par-row")}${team?row("TEAM","strokes",from,to):row("KYLE","kyle",from,to)+row("RYAN","ryan",from,to)}</tbody></table></div></section>`;
+ const row=(name,key,from,to,cls="")=>`<tr class="${cls}"><th scope="row">${esc(name)}</th>${Array.from({length:9},(_,i)=>{const d=data.find(x=>Number(x.hole)===from+i)||{};return `<td>${key==="par"||key==="yards"?(numeric(d[key])?fmt(d[key]):"—"):scoreBadge(d[key],d.par)}</td>`}).join("")}<td class="nine-sum">${fmt(nineTotal(data,key,from,to))}</td></tr>`;
+ const block=(from,to,name)=>`<section class="traditional-nine"><div class="traditional-nine-heading"><strong>${name}</strong><span>HOLES ${from}–${to}</span></div><div class="traditional-scroll"><table class="traditional-table"><thead><tr><th scope="col">HOLE</th>${Array.from({length:9},(_,i)=>`<th scope="col">${from+i}</th>`).join("")}<th scope="col">${from===1?"OUT":"IN"}</th></tr></thead><tbody>${row("PAR","par",from,to,"par-row")}${row("YDS","yards",from,to,"yard-row")}${team?row("TEAM","strokes",from,to):row("KYLE","kyle",from,to)+row("RYAN","ryan",from,to)}</tbody></table></div></section>`;
  const keys=team?[["TEAM","strokes"]]:[["KYLE","kyle"],["RYAN","ryan"]];
  return `<div class="traditional-scorecard">${block(1,9,"Front nine")}${block(10,18,"Back nine")}<div class="traditional-total"><div class="traditional-total-heading">18-HOLE TOTALS</div>${keys.map(([name,key])=>`<div class="traditional-total-line"><strong>${name}</strong><span>OUT ${fmt(nineTotal(data,key,1,9))}</span><span>IN ${fmt(nineTotal(data,key,10,18))}</span><strong class="final-total">${fmt(nineTotal(data,key,1,18))}</strong></div>`).join("")}</div><div class="score-legend"><span><i class="score-eagle"></i>Eagle+</span><span><i class="score-birdie"></i>Birdie</span><span><i class="score-par"></i>Par</span><span><i class="score-bogey"></i>Bogey</span><span><i class="score-double"></i>Double+</span></div></div>`;
 }
