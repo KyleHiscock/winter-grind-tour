@@ -337,6 +337,26 @@ a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid var(
 .weekly-art-host.art-loaded>.weekly-art-fallback{display:none}
 .weekly-art-fallback>.theme-photo-poster,.weekly-art-fallback>.theme-artwork{margin:0}
 .weekly-art-host.compact .weekly-art-official{border-radius:10px}
+
+.cinematic-week-poster{position:relative;min-height:485px;background:#09251c;overflow:hidden;border:1px solid #a98854;border-radius:16px;margin:18px 0 22px;display:flex;flex-direction:column;justify-content:space-between;text-align:center;isolation:isolate}
+.cinematic-cover{position:absolute;inset:0;background-position:center;background-size:cover;z-index:-1}
+.cinematic-content{padding:22px 24px 16px;display:flex;flex-direction:column;align-items:center;gap:10px}
+.cinematic-crest{width:112px;height:112px;object-fit:contain;filter:drop-shadow(0 3px 9px #000c)}
+.cinematic-overline{color:#e9b477;font-size:12px;font-weight:800;letter-spacing:.22em}
+.cinematic-content h2{font:600 clamp(30px,5vw,64px) Georgia,serif;color:#fff7e7;letter-spacing:-.025em;margin:4px 0;text-shadow:0 3px 12px #061811}
+.cinematic-date{font-weight:750;letter-spacing:.16em;font-size:12px;color:#e9b477}
+.cinematic-rounds{display:grid;grid-template-columns:1fr 1fr;background:#071e19ed;border-top:1px solid #a98854}
+.cinematic-rounds>div{padding:17px 10px 19px}.cinematic-rounds>div+div{border-left:1px solid #94724c}
+.cinematic-rounds span{display:block;font-size:10px;font-weight:800;letter-spacing:.14em;color:#e9b477}
+.cinematic-rounds strong{font:600 clamp(21px,2.5vw,33px) Georgia,serif;color:#fff9ed}
+.cinematic-credit{background:#071e19;color:#9db3a6;font-size:9px;padding:5px}
+.cinematic-week-poster.compact{min-height:210px;margin:0 0 12px;border-radius:10px}
+.compact .cinematic-content{gap:3px;padding:8px}.compact .cinematic-crest{width:42px;height:42px}
+.compact .cinematic-overline{font-size:8px;letter-spacing:.08em}
+.compact .cinematic-content h2{font-size:18px;margin:1px 0}.compact .cinematic-date{font-size:8px}
+.compact .cinematic-rounds>div{padding:8px 4px}.compact .cinematic-rounds span{font-size:7px;letter-spacing:0}
+.compact .cinematic-rounds strong{font-size:13px}.compact .cinematic-credit{font-size:6px}
+@media(max-width:600px){.cinematic-week-poster{min-height:370px}.cinematic-crest{width:85px;height:85px}.cinematic-content h2{font-size:31px}.cinematic-rounds span{font-size:8px}.cinematic-rounds strong{font-size:18px}}
 </style></head>
 <body><header class="topbar"><div class="shell"><div class="topinner"><a href="#" class="brand" id="homeBrand"><img class="crest-logo" src="winter-grind-logo.svg" alt="The Winter Grind Tour logo"/><div><strong>The Winter Grind Tour</strong><small>Kyle Hiscock × Ryan Grace · 2026–27</small></div></a><div class="topright"><span class="series-label">26 WEEKS · 52 COURSES</span></div></div><nav class="nav" aria-label="Series navigation"><button data-tab="home" class="active">Dashboard</button><button data-tab="schedule">The Tour</button><button data-tab="results">Results</button><button data-tab="stats">Player Stats</button><button data-tab="records">Record Book</button><button data-tab="rules">Format & Rules</button></nav></div></header><main class="shell" id="app"></main><nav class="mobile-quicknav" aria-label="Quick tour navigation"><a href="#/schedule" data-quick-tab="schedule">Tour</a><a href="#/results" data-quick-tab="results">Results</a><a href="#/stats" data-quick-tab="stats">Stats</a></nav><div class="shell"><footer class="notice"><div class="foot"><div>The Winter Grind Tour · 2026–27 · Skramble House of Golf ROC</div><div>Unofficial private series. Not affiliated with GSPro or Skramble House of Golf.</div></div></footer></div>
 <script>
@@ -563,10 +583,14 @@ function weeklyArtwork(s,compact=false){
  const sun=n===2||n===10||n===20?"desert":n===8||n===18||n===19||n===21?"links":n===14||n===17?"mountain":n===25?"dunes":"coast";
  const landscape=sun==="mountain"?`<path d="M0 255 L160 110 275 215 412 82 560 235 690 125 900 285V450H0Z" fill="${light}" opacity=".65"/>`:sun==="desert"?`<path d="M0 290Q210 205 420 260T900 240V450H0Z" fill="${light}" opacity=".68"/><path d="M0 340Q300 260 510 330T900 310V450H0Z" fill="${gold}" opacity=".18"/>`:`<path d="M0 280Q160 205 320 270T610 235T900 288V450H0Z" fill="${light}" opacity=".47"/><path d="M0 330Q180 272 420 322T900 280V450H0Z" fill="${gold}" opacity=".16"/>`;
  if(n===1){
- const spy="https://commons.wikimedia.org/wiki/Special:FilePath/Spyglass_Hill_Golf_Course.jpg?width=1200";
- const peb="https://commons.wikimedia.org/wiki/Special:FilePath/Pebble_Beach_Golf_Links_03.jpg?width=1200";
- return wrapWeeklyArtwork(s,compact,`<div class="theme-photo-poster ${compact?"compact":""}"><div class="theme-photo-head"><span>THE WINTER GRIND TOUR · WEEK 01</span><strong>MONTEREY GRAND OPENING</strong><span>OCTOBER 27, 2026 · MONTEREY, CALIFORNIA</span></div><div class="theme-photo-pair"><div class="theme-course-scene"><img loading="lazy" src="${spy}" alt="Spyglass Hill Golf Course landscape" /><div class="theme-course-caption"><span>ROUND 1 · TWO-MAN SCRAMBLE</span><strong>Spyglass Hill</strong></div></div><div class="theme-course-scene"><img loading="lazy" src="${peb}" alt="Pebble Beach Golf Links landscape" /><div class="theme-course-caption"><span>ROUND 2 · INDIVIDUAL STROKE PLAY</span><strong>Pebble Beach</strong></div></div></div><p class="theme-photo-credit">Course photographs: <a href="https://commons.wikimedia.org/wiki/File:Spyglass_Hill_Golf_Course.jpg" target="_blank" rel="noopener noreferrer">Gregory Ford Henderson</a> and <a href="https://commons.wikimedia.org/wiki/File:Pebble_Beach_Golf_Links_03.jpg" target="_blank" rel="noopener noreferrer">Bernard Gagnon</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a> / <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a> · Cropped for layout</p></div>`);
+ const peb="https://commons.wikimedia.org/wiki/Special:FilePath/Pebble_Beach_18th_hole.jpg?width=1600";
+ return `<div class="cinematic-week-poster ${compact?"compact":""}" role="img" aria-label="Winter Grind Tour Week 1 Monterey Grand Opening, Spyglass Hill scramble and Pebble Beach individual stroke play">
+ <div class="cinematic-cover" style="background-image:linear-gradient(90deg,rgba(5,25,21,.72),rgba(5,25,21,.2),rgba(5,25,21,.62)),url('${peb}')"></div>
+ <div class="cinematic-content"><img class="cinematic-crest" src="winter-grind-logo.svg" alt=""/><div class="cinematic-overline">THE WINTER GRIND TOUR · WEEK 01</div><h2>MONTEREY GRAND OPENING</h2><div class="cinematic-date">OCTOBER 27, 2026 · MONTEREY, CALIFORNIA</div></div>
+ <div class="cinematic-rounds"><div><span>ROUND 1 · TWO-MAN SCRAMBLE</span><strong>Spyglass Hill</strong></div><div><span>ROUND 2 · INDIVIDUAL STROKE PLAY</span><strong>Pebble Beach</strong></div></div>
+ <div class="cinematic-credit">Pebble Beach course photography · Wikimedia Commons · event graphic is a conceptual montage</div></div>`;
  }
+
  const title=esc(s.theme||"Tour Week");
  const cover=`<svg viewBox="0 0 900 450" role="img" aria-label="Winter Grind Tour week ${n}: ${title}; scramble at ${esc(s.scramble)}, stroke play at ${esc(s.stroke)}" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="bg${n}" x2="1" y2="1"><stop stop-color="${dark}"/><stop offset="1" stop-color="#0b1b19"/></linearGradient></defs><rect width="900" height="450" fill="url(#bg${n})"/><circle cx="710" cy="105" r="78" fill="${gold}" opacity=".25"/>${landscape}<rect y="295" width="900" height="155" fill="#071611" opacity=".76"/><text x="48" y="62" fill="${gold}" font-size="20" font-weight="800" letter-spacing="4">THE WINTER GRIND TOUR · WEEK ${String(n).padStart(2,"0")}</text><text x="48" y="335" font-size="37" font-weight="700" fill="white">${title.length>38?title.slice(0,37)+"…":title}</text><text x="48" y="372" fill="${gold}" font-size="17">ROUND 1 · ${esc(s.scramble)}</text><text x="48" y="402" fill="#eff5ed" font-size="17">ROUND 2 · ${esc(s.stroke)}</text></svg>`;
  return wrapWeeklyArtwork(s,compact,`<div class="theme-artwork ${compact?"compact":""}">${cover}</div>`);
